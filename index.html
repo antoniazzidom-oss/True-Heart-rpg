@@ -3,28 +3,32 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Seu Negócio | Mini Site</title>
-  <meta name="description" content="Mini site editável para cafeteria, loja, serviço ou página de pedidos." />
+  <title>Ƭrue Ӈeartᵣₚ — Coffee. Clothing. Adoption.</title>
+  <meta name="description" content="Ƭrue Ӈeartᵣₚ — cafeteria, roupas premium e um espaço de adoção responsável conectado à marca." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --bg: #f6efe7;
-      --bg-soft: #fff8f0;
-      --text: #2b1d14;
-      --muted: #755f4c;
-      --brand: #4a2f20;
-      --brand-2: #c58b55;
-      --cream: #fff4e6;
-      --white: #ffffff;
-      --shadow: 0 18px 45px rgba(48, 29, 17, 0.12);
-      --radius: 28px;
-      --max: 1120px;
+      --bg: #0f0f0f;
+      --panel: #181818;
+      --panel-2: #201915;
+      --text: #f5f1eb;
+      --muted: #9b948d;
+      --soft: #d6c6b6;
+      --gold: #c9a87c;
+      --brown: #5c3d2e;
+      --line: #302b27;
+      --danger: #b98562;
+      --max: 1180px;
     }
 
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
     html {
@@ -32,10 +36,14 @@
     }
 
     body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: var(--bg);
+      background:
+        radial-gradient(circle at top left, rgba(201, 168, 124, 0.08), transparent 34%),
+        radial-gradient(circle at bottom right, rgba(92, 61, 46, 0.18), transparent 30%),
+        var(--bg);
       color: var(--text);
-      line-height: 1.6;
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+      line-height: 1.7;
     }
 
     img {
@@ -48,858 +56,824 @@
       text-decoration: none;
     }
 
-    .topbar {
-      background: var(--brand);
-      color: var(--cream);
-      font-size: 14px;
-      padding: 10px 18px;
+    .container {
+      width: 100%;
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+    .top-note {
+      background: #070707;
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
       text-align: center;
+      padding: 10px 18px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(15, 15, 15, 0.94);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
     }
 
     .navbar {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      background: rgba(246, 239, 231, 0.92);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(74, 47, 32, 0.1);
-    }
-
-    .nav-inner {
-      max-width: var(--max);
-      margin: auto;
-      padding: 16px 18px;
+      min-height: 76px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 18px;
+      gap: 28px;
     }
 
-    .logo {
-      font-weight: 900;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--brand);
-    }
-
-    .nav-links {
+    .brand {
       display: flex;
-      gap: 18px;
-      font-size: 14px;
-      color: var(--muted);
+      align-items: center;
+      gap: 12px;
+      min-width: max-content;
     }
 
-    .nav-links a:hover {
-      color: var(--brand);
+    .brand img {
+      width: 46px;
+      height: 46px;
+      object-fit: contain;
+      border-radius: 999px;
+      background: #f5f1eb;
+      padding: 5px;
+    }
+
+    .brand span {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    nav a {
+      font-size: 12px;
+      color: var(--muted);
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      transition: color .25s ease;
+    }
+
+    nav a:hover {
+      color: var(--text);
     }
 
     .nav-cta {
-      background: var(--brand);
-      color: var(--white);
-      padding: 10px 16px;
-      border-radius: 999px;
-      font-weight: 700;
-      font-size: 14px;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      padding: 12px 16px;
+      font-size: 12px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      transition: .25s ease;
+    }
+
+    .nav-cta:hover {
+      background: var(--gold);
+      color: var(--bg);
     }
 
     .hero {
-      max-width: var(--max);
-      margin: auto;
-      padding: 70px 18px 48px;
+      min-height: calc(100vh - 110px);
       display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
-      gap: 36px;
+      grid-template-columns: 1.08fr .92fr;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hero-copy {
+      padding: 110px 0 90px;
+      display: flex;
       align-items: center;
     }
 
     .eyebrow {
-      color: var(--brand-2);
-      font-weight: 900;
+      color: var(--gold);
+      letter-spacing: 0.34em;
       text-transform: uppercase;
-      letter-spacing: 0.12em;
-      font-size: 13px;
-      margin-bottom: 12px;
+      font-size: 12px;
+      margin-bottom: 24px;
     }
 
     h1 {
-      font-size: clamp(42px, 7vw, 78px);
-      line-height: 0.95;
-      letter-spacing: -0.06em;
-      color: var(--brand);
-      margin-bottom: 22px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(60px, 10vw, 126px);
+      line-height: .86;
+      letter-spacing: .035em;
+      font-weight: 600;
+      margin-bottom: 30px;
+      text-transform: uppercase;
     }
 
-    .hero p {
+    .hero-text {
+      max-width: 650px;
       color: var(--muted);
-      font-size: 18px;
-      max-width: 580px;
-      margin-bottom: 26px;
+      font-size: 17px;
+      margin-bottom: 34px;
     }
 
-    .buttons {
+    .hero-actions,
+    .button-row {
       display: flex;
+      gap: 14px;
       flex-wrap: wrap;
-      gap: 12px;
     }
 
     .btn {
+      min-height: 52px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 48px;
-      padding: 13px 20px;
-      border-radius: 999px;
-      font-weight: 800;
-      background: var(--brand);
-      color: var(--white);
-      box-shadow: 0 8px 20px rgba(74, 47, 32, 0.18);
-      transition: transform 0.2s ease, opacity 0.2s ease;
+      padding: 14px 20px;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      background: transparent;
+      font-size: 12px;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      transition: .25s ease;
+      cursor: pointer;
     }
 
     .btn:hover {
-      transform: translateY(-2px);
-      opacity: 0.92;
+      background: var(--gold);
+      color: var(--bg);
     }
 
-    .btn.secondary {
-      background: var(--cream);
-      color: var(--brand);
-      box-shadow: none;
-      border: 1px solid rgba(74, 47, 32, 0.12);
+    .btn.filled {
+      background: var(--gold);
+      color: var(--bg);
     }
 
-    .hero-card {
-      position: relative;
-      background: var(--bg-soft);
-      border-radius: 38px;
-      padding: 18px;
-      box-shadow: var(--shadow);
-      overflow: hidden;
+    .btn.filled:hover {
+      background: transparent;
+      color: var(--gold);
     }
 
-    .hero-photo {
-      min-height: 460px;
-      border-radius: 28px;
-      background: linear-gradient(135deg, rgba(74, 47, 32, 0.8), rgba(197, 139, 85, 0.75)), url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1000&q=80');
-      background-size: cover;
-      background-position: center;
+    .hero-visual {
+      border-left: 1px solid var(--line);
+      display: grid;
+      place-items: center;
+      padding: 60px 28px;
+      background:
+        linear-gradient(rgba(15,15,15,.35), rgba(15,15,15,.9)),
+        url('https://images.unsplash.com/photo-1442512595331-e89e73853f31?q=80&w=1800&auto=format&fit=crop') center/cover;
+      min-height: 600px;
     }
 
-    .floating-card {
-      position: absolute;
-      left: 34px;
-      right: 34px;
-      bottom: 34px;
-      background: rgba(255, 248, 240, 0.95);
-      border-radius: 22px;
-      padding: 18px;
-      box-shadow: 0 16px 35px rgba(0,0,0,0.12);
+    .logo-frame {
+      width: min(420px, 100%);
+      aspect-ratio: 1 / 1;
+      border: 1px solid rgba(201,168,124,.45);
+      display: grid;
+      place-items: center;
+      background: rgba(15,15,15,.72);
+      backdrop-filter: blur(6px);
+      padding: 42px;
     }
 
-    .floating-card strong {
-      display: block;
-      color: var(--brand);
-      margin-bottom: 4px;
+    .logo-frame img {
+      width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      filter: drop-shadow(0 20px 36px rgba(0,0,0,.35));
     }
 
-    .section {
-      max-width: var(--max);
-      margin: auto;
-      padding: 64px 18px;
+    section {
+      padding: 110px 0;
+      border-bottom: 1px solid var(--line);
     }
 
-    .section-header {
-      max-width: 760px;
-      margin-bottom: 28px;
-    }
-
-    .label {
-      color: var(--brand-2);
-      font-weight: 900;
+    .section-label {
+      color: var(--gold);
+      letter-spacing: .32em;
       text-transform: uppercase;
-      letter-spacing: 0.12em;
       font-size: 12px;
-      margin-bottom: 8px;
+      margin-bottom: 20px;
     }
 
     h2 {
-      color: var(--brand);
-      font-size: clamp(30px, 4vw, 48px);
-      line-height: 1.05;
-      letter-spacing: -0.04em;
-      margin-bottom: 14px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(42px, 6vw, 76px);
+      line-height: .96;
+      font-weight: 600;
+      margin-bottom: 28px;
     }
 
-    .section-header p,
-    .about-text p {
+    .lead {
+      max-width: 760px;
       color: var(--muted);
-      font-size: 17px;
+      font-size: 18px;
     }
 
-    .about-grid {
-      display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
-      gap: 28px;
-      align-items: stretch;
-    }
-
-    .about-image {
-      min-height: 420px;
-      border-radius: var(--radius);
-      background: url('https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=900&q=80') center/cover;
-      box-shadow: var(--shadow);
-    }
-
-    .about-text {
-      background: var(--bg-soft);
-      border-radius: var(--radius);
-      padding: 34px;
-      box-shadow: var(--shadow);
-    }
-
-    .feature-list {
-      display: grid;
-      gap: 14px;
-      margin-top: 24px;
-    }
-
-    .feature {
-      background: var(--cream);
-      border-radius: 18px;
-      padding: 16px;
-      border: 1px solid rgba(74, 47, 32, 0.08);
-    }
-
-    .feature strong {
-      display: block;
-      color: var(--brand);
-      margin-bottom: 4px;
-    }
-
-    .cards {
+    .pillars {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
+      border: 1px solid var(--line);
+      background: rgba(24,24,24,.58);
     }
 
-    .card {
-      background: var(--bg-soft);
-      border-radius: var(--radius);
-      overflow: hidden;
-      box-shadow: var(--shadow);
-      border: 1px solid rgba(74, 47, 32, 0.08);
+    .pillar {
+      min-height: 360px;
+      padding: 48px;
     }
 
-    .card-img {
-      height: 210px;
+    .pillar:not(:last-child) {
+      border-right: 1px solid var(--line);
+    }
+
+    .icon {
+      width: 64px;
+      height: 64px;
+      border: 1px solid var(--line);
+      color: var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      margin-bottom: 38px;
+    }
+
+    .pillar h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 38px;
+      line-height: 1;
+      margin-bottom: 18px;
+      letter-spacing: .06em;
+    }
+
+    .pillar p {
+      color: var(--muted);
+      max-width: 280px;
+    }
+
+    .manifesto {
+      background: var(--panel);
+    }
+
+    .manifesto-text {
+      font-family: 'Cormorant Garamond', serif;
+      max-width: 920px;
+      font-size: clamp(38px, 5vw, 68px);
+      line-height: 1.18;
+      font-style: italic;
+      color: var(--text);
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .image-panel {
+      min-height: 620px;
       background-size: cover;
       background-position: center;
+      filter: grayscale(100%) contrast(112%);
+      border: 1px solid var(--line);
     }
 
-    .card-body {
-      padding: 22px;
-    }
-
-    .card h3 {
-      color: var(--brand);
-      font-size: 22px;
-      margin-bottom: 8px;
-    }
-
-    .card p {
+    .content-panel p {
       color: var(--muted);
-      font-size: 15px;
+      font-size: 17px;
+      margin-bottom: 22px;
     }
 
-    .banner {
-      max-width: var(--max);
-      margin: 30px auto;
-      padding: 0 18px;
-    }
-
-    .banner-inner {
-      background: var(--brand);
-      color: var(--cream);
-      border-radius: 34px;
-      padding: 46px 34px;
+    .micro-list {
       display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 24px;
-      align-items: center;
-      box-shadow: var(--shadow);
+      gap: 12px;
+      margin-top: 28px;
     }
 
-    .banner h2 {
-      color: var(--cream);
-      margin-bottom: 10px;
-    }
-
-    .banner p {
-      color: rgba(255, 244, 230, 0.8);
-      max-width: 720px;
-    }
-
-    .testimonials {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
+    .micro-item {
+      border-top: 1px solid var(--line);
+      padding-top: 16px;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
       gap: 18px;
     }
 
-    .quote {
-      background: var(--bg-soft);
-      border-radius: var(--radius);
-      padding: 24px;
-      box-shadow: var(--shadow);
+    .micro-item strong {
+      color: var(--text);
+      font-weight: 500;
     }
 
-    .quote p {
-      color: var(--muted);
-      margin-bottom: 18px;
-    }
-
-    .quote strong {
-      color: var(--brand);
-    }
-
-    .info-grid {
+    .adoption-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 18px;
+      gap: 28px;
+      margin-top: 46px;
     }
 
-    .info-box {
-      background: var(--bg-soft);
-      border-radius: var(--radius);
-      padding: 28px;
-      box-shadow: var(--shadow);
+    .adoption-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      padding: 34px;
+      min-height: 330px;
     }
 
-    .info-box h3 {
-      color: var(--brand);
-      margin-bottom: 12px;
-      font-size: 24px;
+    .adoption-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 40px;
+      margin-bottom: 18px;
+      letter-spacing: .04em;
     }
 
-    .hours {
-      list-style: none;
+    .adoption-card p,
+    .adoption-card li {
+      color: var(--muted);
+    }
+
+    .adoption-card ul {
+      margin-top: 20px;
+      padding-left: 18px;
       display: grid;
       gap: 10px;
     }
 
-    .hours li {
-      display: flex;
-      justify-content: space-between;
-      border-bottom: 1px solid rgba(74,47,32,0.12);
-      padding-bottom: 8px;
-      color: var(--muted);
+    .animal-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 42px;
     }
 
-    .team {
+    .animal-card {
+      border: 1px solid var(--line);
+      background: #121212;
+      overflow: hidden;
+    }
+
+    .animal-photo {
+      height: 260px;
+      background-size: cover;
+      background-position: center;
+      filter: grayscale(100%) contrast(110%);
+    }
+
+    .animal-body {
+      padding: 24px;
+    }
+
+    .status {
+      display: inline-flex;
+      color: var(--gold);
+      border: 1px solid rgba(201,168,124,.45);
+      padding: 6px 10px;
+      font-size: 11px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .animal-body h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 32px;
+      margin-bottom: 8px;
+    }
+
+    .animal-body p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .visit-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+    }
+
+    .location-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(50px, 7vw, 90px);
+      letter-spacing: .28em;
+      font-weight: 400;
+      margin-bottom: 30px;
+    }
+
+    .info-lines {
+      color: var(--muted);
+      display: grid;
+      gap: 12px;
+    }
+
+    .hours {
+      margin-top: 34px;
+      border-top: 1px solid var(--line);
+      padding-top: 24px;
+      display: grid;
+      gap: 12px;
+      max-width: 460px;
+    }
+
+    .hour-row {
+      display: flex;
+      justify-content: space-between;
+      color: var(--muted);
       gap: 18px;
     }
 
-    .person {
-      background: var(--bg-soft);
-      border-radius: 24px;
-      overflow: hidden;
-      box-shadow: var(--shadow);
-      text-align: center;
+    .form-box {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      padding: 42px;
     }
 
-    .person-img {
-      height: 220px;
-      background-size: cover;
-      background-position: center;
-    }
-
-    .person-body {
-      padding: 18px;
-    }
-
-    .person h3 {
-      color: var(--brand);
-      font-size: 18px;
-    }
-
-    .person span {
+    .form-box p {
       color: var(--muted);
-      font-size: 14px;
+      margin-bottom: 24px;
     }
 
-    .form-wrap {
-      background: var(--bg-soft);
-      border-radius: 34px;
-      padding: 34px;
-      box-shadow: var(--shadow);
-      display: grid;
-      grid-template-columns: 0.85fr 1.15fr;
+    footer {
+      padding: 44px 0;
+      background: #070707;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       gap: 28px;
-      align-items: start;
-    }
-
-    form {
-      display: grid;
-      gap: 14px;
-    }
-
-    input, textarea, select {
-      width: 100%;
-      border: 1px solid rgba(74, 47, 32, 0.16);
-      background: var(--white);
-      border-radius: 16px;
-      padding: 14px 16px;
-      font: inherit;
-      color: var(--text);
-      outline: none;
-    }
-
-    textarea {
-      min-height: 130px;
-      resize: vertical;
-    }
-
-    button {
-      border: 0;
-      cursor: pointer;
-      font: inherit;
-    }
-
-    .footer {
-      background: var(--brand);
-      color: var(--cream);
-      margin-top: 50px;
-      padding: 42px 18px;
-    }
-
-    .footer-inner {
-      max-width: var(--max);
-      margin: auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 24px;
-    }
-
-    .footer h3,
-    .footer strong {
-      color: var(--white);
-      margin-bottom: 10px;
-      display: block;
-    }
-
-    .footer p,
-    .footer a {
-      color: rgba(255, 244, 230, 0.78);
-      font-size: 14px;
-    }
-
-    .copy {
-      max-width: var(--max);
-      margin: 28px auto 0;
-      padding-top: 18px;
-      border-top: 1px solid rgba(255,255,255,0.12);
-      color: rgba(255, 244, 230, 0.65);
+      color: var(--muted);
       font-size: 13px;
     }
 
-    @media (max-width: 900px) {
+    .footer-links {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a:hover {
+      color: var(--gold);
+    }
+
+    .edit-note {
+      border-left: 3px solid var(--gold);
+      padding: 16px 18px;
+      background: rgba(201,168,124,.08);
+      color: var(--soft);
+      margin-top: 24px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 1020px) {
+      nav {
+        display: none;
+      }
+
       .hero,
-      .about-grid,
-      .form-wrap,
-      .banner-inner,
-      .info-grid {
+      .split,
+      .visit-grid,
+      .adoption-grid {
         grid-template-columns: 1fr;
       }
 
-      .cards,
-      .testimonials {
-        grid-template-columns: 1fr 1fr;
+      .hero-visual {
+        border-left: 0;
+        border-top: 1px solid var(--line);
+        min-height: 460px;
       }
 
-      .team {
-        grid-template-columns: 1fr 1fr;
+      .pillars,
+      .animal-list {
+        grid-template-columns: 1fr;
       }
 
-      .hero-photo {
-        min-height: 380px;
+      .pillar:not(:last-child) {
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .image-panel {
+        min-height: 460px;
       }
     }
 
     @media (max-width: 640px) {
-      .nav-inner {
-        align-items: flex-start;
+      .container {
+        padding: 0 20px;
       }
 
-      .nav-links {
+      .brand span {
+        font-size: 15px;
+        letter-spacing: .12em;
+      }
+
+      .brand img {
+        width: 40px;
+        height: 40px;
+      }
+
+      .nav-cta {
         display: none;
       }
 
-      .hero {
-        padding-top: 48px;
+      .hero-copy {
+        padding: 76px 0 64px;
       }
 
-      .buttons,
+      .hero-actions,
+      .button-row {
+        width: 100%;
+      }
+
       .btn {
         width: 100%;
       }
 
-      .cards,
-      .testimonials,
-      .team,
-      .footer-inner {
-        grid-template-columns: 1fr;
+      section {
+        padding: 78px 0;
       }
 
-      .hero-photo {
-        min-height: 330px;
+      .pillar,
+      .adoption-card,
+      .form-box {
+        padding: 28px;
       }
 
-      .floating-card {
-        left: 22px;
-        right: 22px;
-        bottom: 22px;
-      }
-
-      .section {
-        padding: 46px 18px;
+      .footer-content {
+        flex-direction: column;
+        align-items: flex-start;
       }
     }
   </style>
 </head>
 
 <body>
-  <!-- EDITE AQUI: endereço/frase curta do topo -->
-  <div class="topbar">
-    Atendimento online • Pedidos, opiniões e orçamentos pelo formulário
-  </div>
+  <!-- EDITE AQUI: frase pequena do topo -->
+  <div class="top-note">Since 2025 • Berlin • Coffee. Clothing. Adoption.</div>
 
-  <header class="navbar">
-    <div class="nav-inner">
-      <!-- EDITE AQUI: nome da marca -->
-      <a class="logo" href="#inicio">Sua Marca</a>
+  <header>
+    <div class="container navbar">
+      <a class="brand" href="#home" aria-label="Ƭrue Ӈeartᵣₚ">
+        <!-- IMPORTANTE: suba sua logo no GitHub como images/logo.png -->
+        <img src="images/logo.png" alt="Logo Ƭrue Ӈeartᵣₚ">
+        <span>Ƭrue Ӈeartᵣₚ</span>
+      </a>
 
-      <nav class="nav-links" aria-label="Menu principal">
-        <a href="#sobre">Sobre</a>
-        <a href="#servicos">Serviços</a>
-        <a href="#feedback">Feedback</a>
-        <a href="#contato">Contato</a>
+      <nav aria-label="Menu principal">
+        <a href="#about">About</a>
+        <a href="#coffee">Coffee</a>
+        <a href="#clothing">Clothing</a>
+        <a href="#adoption">Adoption</a>
+        <a href="#visit">Visit</a>
       </nav>
 
-      <!-- EDITE AQUI: link do botão principal -->
-      <a class="nav-cta" href="#pedido">Fazer pedido</a>
+      <!-- TROQUE O LINK ABAIXO PELO GOOGLE FORMS QUANDO ESTIVER PRONTO -->
+      <a class="nav-cta" href="https://forms.gle/SEU-LINK-AQUI" target="_blank" rel="noopener">Apply</a>
     </div>
   </header>
 
-  <main id="inicio">
+  <main id="home">
     <section class="hero">
-      <div>
-        <div class="eyebrow">Bem-vindo</div>
-        <!-- EDITE AQUI: título principal -->
-        <h1>Ideias, pedidos e opiniões em um só lugar.</h1>
-        <!-- EDITE AQUI: subtítulo principal -->
-        <p>
-          Um mini site simples, bonito e direto para apresentar seu trabalho,
-          receber solicitações e facilitar o contato com quem chega até você.
-        </p>
-
-        <div class="buttons">
-          <a class="btn" href="#pedido">Enviar pedido</a>
-          <!-- EDITE AQUI: seu link de WhatsApp -->
-          <a class="btn secondary" href="https://wa.me/5500000000000" target="_blank" rel="noopener">WhatsApp</a>
-        </div>
-      </div>
-
-      <div class="hero-card" aria-label="Imagem de destaque">
-        <!-- EDITE NO CSS: troque a imagem em .hero-photo -->
-        <div class="hero-photo"></div>
-        <div class="floating-card">
-          <strong>Resposta manual e personalizada</strong>
-          <span>Você recebe a solicitação e decide como responder.</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="sobre">
-      <div class="section-header">
-        <div class="label">Sobre</div>
-        <h2>Uma página para explicar quem você é e o que oferece.</h2>
-        <p>
-          Use esta parte para contar sua história, apresentar sua proposta e deixar claro
-          por que alguém deveria entrar em contato com você.
-        </p>
-      </div>
-
-      <div class="about-grid">
-        <!-- EDITE NO CSS: troque a imagem em .about-image -->
-        <div class="about-image"></div>
-
-        <div class="about-text">
-          <h2>Seu diferencial aparece aqui.</h2>
-          <p>
-            Escreva uma descrição curta e humana. Não precisa exagerar: diga o que você faz,
-            para quem faz e como a pessoa pode pedir uma opinião, serviço ou orçamento.
-          </p>
-
-          <div class="feature-list">
-            <div class="feature">
-              <strong>Atendimento simples</strong>
-              <span>Receba pedidos por formulário, WhatsApp ou link externo.</span>
-            </div>
-            <div class="feature">
-              <strong>Organização</strong>
-              <span>Separe tipos de solicitação para não virar bagunça.</span>
-            </div>
-            <div class="feature">
-              <strong>Personalidade</strong>
-              <span>Troque cores, fotos e textos para ficar com a sua cara.</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="servicos">
-      <div class="section-header">
-        <div class="label">Categorias</div>
-        <h2>O que as pessoas podem pedir?</h2>
-        <p>
-          Esta seção imita a lógica de um cardápio/categorias, mas sem copiar conteúdo.
-          Troque os cards pelos seus serviços, temas ou tipos de pedido.
-        </p>
-      </div>
-
-      <div class="cards">
-        <article class="card">
-          <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=900&q=80');"></div>
-          <div class="card-body">
-            <h3>Pedidos</h3>
-            <p>Para quem quer solicitar algo específico, mandar uma ideia ou pedir uma análise.</p>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80');"></div>
-          <div class="card-body">
-            <h3>Opiniões</h3>
-            <p>Para receber comentários, dúvidas, sugestões ou feedbacks de forma organizada.</p>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=80');"></div>
-          <div class="card-body">
-            <h3>Orçamentos</h3>
-            <p>Para captar interessados e responder manualmente depois, sem checkout pago.</p>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=900&q=80');"></div>
-          <div class="card-body">
-            <h3>Consultas</h3>
-            <p>Para pessoas que precisam explicar melhor uma situação antes do contato.</p>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80');"></div>
-          <div class="card-body">
-            <h3>Referências</h3>
-            <p>Para quem quer mandar inspirações, imagens, links ou exemplos do que deseja.</p>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=900&q=80');"></div>
-          <div class="card-body">
-            <h3>Parcerias</h3>
-            <p>Para contatos profissionais, colaborações e oportunidades.</p>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="banner">
-      <div class="banner-inner">
+      <div class="container hero-copy">
         <div>
-          <h2>Quer mandar uma solicitação?</h2>
-          <p>
-            Clique no botão e preencha o formulário. Você pode trocar isso por Google Forms,
-            Tally, Formspree ou WhatsApp.
+          <div class="eyebrow">Follow your heart</div>
+          <h1>TRUE<br>HEART</h1>
+          <p class="hero-text">
+            Coffee. Clothing. Adoption. A cafeteria and premium clothing project created to give visibility, care and real opportunities to animals waiting for responsible homes.
           </p>
+          <div class="hero-actions">
+            <a class="btn filled" href="#adoption">Adoption Room</a>
+            <!-- TROQUE O LINK ABAIXO PELO GOOGLE FORMS QUANDO ESTIVER PRONTO -->
+            <a class="btn" href="https://forms.gle/SEU-LINK-AQUI" target="_blank" rel="noopener">Faça seu pedido</a>
+          </div>
         </div>
-        <a class="btn secondary" href="#pedido">Enviar agora</a>
+      </div>
+
+      <div class="hero-visual">
+        <div class="logo-frame">
+          <!-- IMPORTANTE: suba sua logo no GitHub como images/logo.png -->
+          <img src="images/logo.png" alt="Logo True Heart">
+        </div>
       </div>
     </section>
 
-    <section class="section" id="feedback">
-      <div class="section-header">
-        <div class="label">Feedback</div>
-        <h2>Espaço para avaliações, comentários ou provas sociais.</h2>
-        <p>
-          Coloque depoimentos reais quando tiver. Não invente avaliação falsa — isso queima sua credibilidade.
+    <section id="about">
+      <div class="container">
+        <div class="section-label">About</div>
+        <h2>A café with a purpose. A brand built to help.</h2>
+        <p class="lead">
+          Ƭrue Ӈeartᵣₚ nasce como uma cafeteria com identidade forte, uma linha de roupas premium e uma causa fixa: ser ponte entre ONGs, animais resgatados e pessoas preparadas para adotar com responsabilidade.
+        </p>
+
+        <div class="edit-note">
+          Esta é uma versão inicial do texto. Depois, troque por uma apresentação oficial da marca quando a operação estiver mais definida.
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container pillars">
+        <article class="pillar">
+          <div class="icon">◯</div>
+          <h3>BREWED</h3>
+          <p>
+            A cafeteria como ponto de encontro: café, pausa, presença e uma experiência conectada ao propósito da marca.
+          </p>
+        </article>
+
+        <article class="pillar">
+          <div class="icon">△</div>
+          <h3>WORN</h3>
+          <p>
+            Roupas premium com True Heart escrito, feitas em Portugal, com qualidade e intenção além da estética.
+          </p>
+        </article>
+
+        <article class="pillar">
+          <div class="icon">✢</div>
+          <h3>ADOPTED</h3>
+          <p>
+            Um espaço separado e supervisionado para dar visibilidade a animais de ONGs parceiras em ciclos de adoção.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="manifesto">
+      <div class="container">
+        <p class="manifesto-text">
+          More than coffee. More than clothing. A place created to connect care, presence and responsible adoption.
         </p>
       </div>
-
-      <div class="testimonials">
-        <article class="quote">
-          <p>“Atendimento rápido e bem explicado. Consegui enviar tudo pelo formulário.”</p>
-          <strong>Cliente 01</strong>
-        </article>
-        <article class="quote">
-          <p>“A página ficou simples de entender e facilitou muito o primeiro contato.”</p>
-          <strong>Cliente 02</strong>
-        </article>
-        <article class="quote">
-          <p>“Gostei porque não precisei baixar nada nem mandar várias mensagens separadas.”</p>
-          <strong>Cliente 03</strong>
-        </article>
-      </div>
     </section>
 
-    <section class="section" id="contato">
-      <div class="section-header">
-        <div class="label">Informações</div>
-        <h2>Horário, contato e links importantes.</h2>
-      </div>
-
-      <div class="info-grid">
-        <div class="info-box">
-          <h3>Horário</h3>
-          <ul class="hours">
-            <li><span>Segunda a sexta</span><strong>09:00 - 18:00</strong></li>
-            <li><span>Sábado</span><strong>10:00 - 14:00</strong></li>
-            <li><span>Domingo</span><strong>Fechado</strong></li>
-          </ul>
-        </div>
-
-        <div class="info-box">
-          <h3>Contato</h3>
-          <p><strong>WhatsApp:</strong> (00) 00000-0000</p>
-          <p><strong>E-mail:</strong> contato@seudominio.com</p>
-          <p><strong>Instagram:</strong> @seuinstagram</p>
+    <section id="coffee">
+      <div class="container split">
+        <div class="image-panel" style="background-image: url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1800&auto=format&fit=crop');"></div>
+        <div class="content-panel">
+          <div class="section-label">Coffee</div>
+          <h2>The café is the front door.</h2>
+          <p>
+            A experiência começa na cafeteria: um espaço elegante, acolhedor e separado da área dos animais. Quem entra pode conhecer o projeto, ver a área de adoção através de vidro e decidir se quer participar, visitar ou apoiar.
+          </p>
+          <p>
+            A área de alimentação deve permanecer separada da área animal. Isso não é apenas estética: é higiene, segurança e respeito pela operação.
+          </p>
+          <div class="micro-list">
+            <div class="micro-item"><strong>Ambiente</strong><span>Café, marca e propósito</span></div>
+            <div class="micro-item"><strong>Separação</strong><span>Vidros, portas e circulação controlada</span></div>
+            <div class="micro-item"><strong>Experiência</strong><span>Ver, conhecer e apoiar sem invadir</span></div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section">
-      <div class="section-header">
-        <div class="label">Equipe ou destaques</div>
-        <h2>Mostre quem está por trás.</h2>
-        <p>
-          Se você trabalha sozinha, use esta seção para mostrar suas áreas, pacotes ou exemplos.
+    <section id="clothing">
+      <div class="container split">
+        <div class="content-panel">
+          <div class="section-label">Clothing</div>
+          <h2>Premium garments made with intention.</h2>
+          <p>
+            A linha True Heart Wear deve ser desejável por si só: tecido premium, produção em Portugal, corte bem pensado e identidade visual forte.
+          </p>
+          <p>
+            A causa não deve parecer desculpa para vender qualquer produto. A roupa precisa sustentar a promessa da marca: qualidade, permanência e propósito.
+          </p>
+          <div class="button-row">
+            <!-- TROQUE O LINK QUANDO TIVER LOJA OU FORMULÁRIO DE INTERESSE -->
+            <a class="btn" href="https://forms.gle/SEU-LINK-AQUI" target="_blank" rel="noopener">Lista de interesse</a>
+          </div>
+        </div>
+        <div class="image-panel" style="background-image: url('https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1800&auto=format&fit=crop');"></div>
+      </div>
+    </section>
+
+    <section id="adoption">
+      <div class="container">
+        <div class="section-label">Adoption Room</div>
+        <h2>A separated adoption space connected to the café.</h2>
+        <p class="lead">
+          A Ƭrue Ӈeartᵣₚ atua como ponte: oferece visibilidade, espaço e estrutura para animais de ONGs parceiras encontrarem lares responsáveis. O processo de triagem e adoção deve ser feito com parceiros qualificados.
         </p>
-      </div>
 
-      <div class="team">
-        <article class="person">
-          <div class="person-img" style="background-image: url('https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=700&q=80');"></div>
-          <div class="person-body">
-            <h3>Nome 01</h3>
-            <span>Função ou destaque</span>
-          </div>
-        </article>
+        <div class="adoption-grid">
+          <article class="adoption-card">
+            <h3>Cycles</h3>
+            <p>
+              A ideia é trabalhar com ciclos de 7 a 15 dias, alternando espécies de forma responsável: gatos em um ciclo, cachorros em outro, sem mistura e sem contato visual direto quando isso gerar estresse.
+            </p>
+            <ul>
+              <li>Ciclos pequenos e supervisionados.</li>
+              <li>Entrada controlada mediante horário ou taxa de apoio.</li>
+              <li>Animais selecionados conforme perfil e bem-estar.</li>
+            </ul>
+          </article>
 
-        <article class="person">
-          <div class="person-img" style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=700&q=80');"></div>
-          <div class="person-body">
-            <h3>Nome 02</h3>
-            <span>Função ou destaque</span>
-          </div>
-        </article>
+          <article class="adoption-card">
+            <h3>Spaces</h3>
+            <p>
+              O ideal é ter áreas separadas: uma sala para gatos, um pátio adaptado para cães e uma retaguarda fora do público para descanso, adaptação e manejo.
+            </p>
+            <ul>
+              <li>Sem animais circulando na área de alimentos.</li>
+              <li>Vidros e portas separando os ambientes.</li>
+              <li>Espaços onde os animais possam se esconder e descansar.</li>
+            </ul>
+          </article>
+        </div>
 
-        <article class="person">
-          <div class="person-img" style="background-image: url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=700&q=80');"></div>
-          <div class="person-body">
-            <h3>Nome 03</h3>
-            <span>Função ou destaque</span>
-          </div>
-        </article>
+        <div class="animal-list">
+          <article class="animal-card">
+            <div class="animal-photo" style="background-image: url('https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?q=80&w=1200&auto=format&fit=crop');"></div>
+            <div class="animal-body">
+              <span class="status">Coming soon</span>
+              <h3>Cat Cycle</h3>
+              <p>Espaço reservado para o próximo ciclo de gatos disponíveis para adoção responsável.</p>
+            </div>
+          </article>
 
-        <article class="person">
-          <div class="person-img" style="background-image: url('https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=700&q=80');"></div>
-          <div class="person-body">
-            <h3>Nome 04</h3>
-            <span>Função ou destaque</span>
-          </div>
-        </article>
+          <article class="animal-card">
+            <div class="animal-photo" style="background-image: url('https://images.unsplash.com/photo-1552053831-71594a27632d?q=80&w=1200&auto=format&fit=crop');"></div>
+            <div class="animal-body">
+              <span class="status">Coming soon</span>
+              <h3>Dog Cycle</h3>
+              <p>Espaço reservado para o próximo ciclo de cães disponíveis para adoção responsável.</p>
+            </div>
+          </article>
+
+          <article class="animal-card">
+            <div class="animal-photo" style="background-image: url('https://images.unsplash.com/photo-1601758228041-f3b2795255f1?q=80&w=1200&auto=format&fit=crop');"></div>
+            <div class="animal-body">
+              <span class="status">Partner needed</span>
+              <h3>ONG Partners</h3>
+              <p>Área para explicar quais parceiros participam e como o processo de adoção será conduzido.</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="button-row" style="margin-top: 34px;">
+          <!-- TROQUE O LINK ABAIXO PELO GOOGLE FORMS QUANDO ESTIVER PRONTO -->
+          <a class="btn filled" href="https://forms.gle/SEU-LINK-AQUI" target="_blank" rel="noopener">Quero adotar</a>
+          <a class="btn" href="#visit">Como visitar</a>
+        </div>
       </div>
     </section>
 
-    <section class="section" id="pedido">
-      <div class="form-wrap">
+    <section id="visit">
+      <div class="container visit-grid">
         <div>
-          <div class="label">Pedido</div>
-          <h2>Receba solicitações sem loja paga.</h2>
-          <p>
-            Este formulário abre uma mensagem no WhatsApp com os dados preenchidos.
-            É grátis e simples. Se quiser, depois você pode trocar por Formspree, Tally ou Google Forms.
-          </p>
+          <div class="section-label">Visit</div>
+          <div class="location-title">BERLIN</div>
+          <div class="info-lines">
+            <p>Endereço ainda não definido.</p>
+            <p>Marcação: @trueheartrp</p>
+            <p>Since 2025</p>
+          </div>
+
+          <div class="hours">
+            <div class="hour-row"><span>MON — FRI</span><span>To be announced</span></div>
+            <div class="hour-row"><span>SAT</span><span>To be announced</span></div>
+            <div class="hour-row"><span>SUN</span><span>To be announced</span></div>
+          </div>
         </div>
 
-        <form id="requestForm">
-          <input type="text" id="nome" placeholder="Seu nome" required />
-          <input type="text" id="contato" placeholder="WhatsApp ou Instagram" required />
-          <select id="tipo" required>
-            <option value="">Tipo de solicitação</option>
-            <option value="Pedido">Pedido</option>
-            <option value="Opinião">Opinião</option>
-            <option value="Orçamento">Orçamento</option>
-            <option value="Parceria">Parceria</option>
-            <option value="Outro">Outro</option>
-          </select>
-          <textarea id="mensagem" placeholder="Explique o que você quer" required></textarea>
-          <button class="btn" type="submit">Enviar pelo WhatsApp</button>
-        </form>
+        <div class="form-box">
+          <div class="section-label">Forms</div>
+          <h2>Applications and requests.</h2>
+          <p>
+            Use Google Forms para separar os pedidos: adoção, parceria com ONG, lista de interesse para roupas e contato geral. Não misture tudo em um único formulário se começar a receber volume.
+          </p>
+          <div class="button-row">
+            <!-- TROQUE O LINK ABAIXO PELO GOOGLE FORMS QUANDO ESTIVER PRONTO -->
+            <a class="btn filled" href="https://forms.gle/SEU-LINK-AQUI" target="_blank" rel="noopener">Faça seu pedido</a>
+            <a class="btn" href="#adoption">Adoption Room</a>
+          </div>
+        </div>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="footer-inner">
-      <div>
-        <h3>Sua Marca</h3>
-        <p>Mini site para pedidos, opiniões e contatos.</p>
-      </div>
-      <div>
-        <strong>Links</strong>
-        <p><a href="#sobre">Sobre</a></p>
-        <p><a href="#servicos">Serviços</a></p>
-        <p><a href="#pedido">Fazer pedido</a></p>
-      </div>
-      <div>
-        <strong>Contato</strong>
-        <p>WhatsApp: (00) 00000-0000</p>
-        <p>Instagram: @seuinstagram</p>
+  <footer>
+    <div class="container footer-content">
+      <div>© 2025 Ƭrue Ӈeartᵣₚ. All rights reserved.</div>
+      <div class="footer-links">
+        <a href="#about">About</a>
+        <a href="#coffee">Coffee</a>
+        <a href="#clothing">Clothing</a>
+        <a href="#adoption">Adoption</a>
+        <a href="#visit">Visit</a>
       </div>
     </div>
-    <div class="copy">© 2026 Sua Marca. Todos os direitos reservados.</div>
   </footer>
-
-  <script>
-    // EDITE AQUI: coloque seu número com DDI + DDD, sem espaços.
-    // Exemplo Brasil/Rio Grande do Sul: 5551999999999
-    const WHATSAPP_NUMBER = "5500000000000";
-
-    const form = document.getElementById("requestForm");
-
-    form.addEventListener("submit", function (event) {
-      event.preventDefault();
-
-      const nome = document.getElementById("nome").value.trim();
-      const contato = document.getElementById("contato").value.trim();
-      const tipo = document.getElementById("tipo").value;
-      const mensagem = document.getElementById("mensagem").value.trim();
-
-      const texto = `Olá! Quero enviar uma solicitação.%0A%0A` +
-        `Nome: ${encodeURIComponent(nome)}%0A` +
-        `Contato: ${encodeURIComponent(contato)}%0A` +
-        `Tipo: ${encodeURIComponent(tipo)}%0A` +
-        `Mensagem: ${encodeURIComponent(mensagem)}`;
-
-      window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${texto}`, "_blank");
-    });
-  </script>
 </body>
 </html>
