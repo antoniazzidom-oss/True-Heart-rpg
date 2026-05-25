@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ƭrue Ӈeartᵣₚ — Coffee. Clothing. Adoption.</title>
-  <meta name="description" content="Ƭrue Ӈeartᵣₚ — cafeteria, roupas premium e um espaço de adoção responsável conectado à marca." />
+  <title>Ƭrue Ӈeartᵣₚ — Café, afeto e adoção responsável</title>
+  <meta name="description" content="Ƭrue Ӈeartᵣₚ — uma cafeteria acolhedora com roupas premium e um espaço dedicado à adoção responsável de animais." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,17 +12,18 @@
 
   <style>
     :root {
-      --bg: #0f0f0f;
-      --panel: #181818;
-      --panel-2: #201915;
-      --text: #f5f1eb;
-      --muted: #9b948d;
-      --soft: #d6c6b6;
+      --bg: #17120f;
+      --bg-soft: #211914;
+      --card: #2a201a;
+      --cream: #f6efe5;
+      --cream-soft: #e8d8c5;
+      --muted: #c6b7a6;
       --gold: #c9a87c;
-      --brown: #5c3d2e;
-      --line: #302b27;
-      --danger: #b98562;
-      --max: 1180px;
+      --caramel: #a96f45;
+      --line: rgba(246, 239, 229, 0.13);
+      --shadow: 0 24px 70px rgba(0,0,0,.28);
+      --max: 1160px;
+      --radius: 28px;
     }
 
     * {
@@ -37,18 +38,18 @@
 
     body {
       background:
-        radial-gradient(circle at top left, rgba(201, 168, 124, 0.08), transparent 34%),
-        radial-gradient(circle at bottom right, rgba(92, 61, 46, 0.18), transparent 30%),
+        radial-gradient(circle at top left, rgba(201,168,124,.18), transparent 28%),
+        radial-gradient(circle at bottom right, rgba(169,111,69,.16), transparent 30%),
         var(--bg);
-      color: var(--text);
+      color: var(--cream);
       font-family: 'Inter', sans-serif;
-      overflow-x: hidden;
       line-height: 1.7;
+      overflow-x: hidden;
     }
 
     img {
-      max-width: 100%;
       display: block;
+      max-width: 100%;
     }
 
     a {
@@ -60,25 +61,23 @@
       width: 100%;
       max-width: var(--max);
       margin: 0 auto;
-      padding: 0 28px;
+      padding: 0 24px;
     }
 
     .top-note {
-      background: #070707;
+      background: rgba(246,239,229,.06);
       color: var(--muted);
-      font-size: 12px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
       text-align: center;
-      padding: 10px 18px;
+      font-size: 13px;
+      padding: 10px 16px;
       border-bottom: 1px solid var(--line);
     }
 
     header {
       position: sticky;
       top: 0;
-      z-index: 1000;
-      background: rgba(15, 15, 15, 0.94);
+      z-index: 50;
+      background: rgba(23,18,15,.88);
       backdrop-filter: blur(14px);
       border-bottom: 1px solid var(--line);
     }
@@ -88,7 +87,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 28px;
+      gap: 22px;
     }
 
     .brand {
@@ -102,180 +101,195 @@
       width: 46px;
       height: 46px;
       object-fit: contain;
-      border-radius: 999px;
-      background: #f5f1eb;
+      border-radius: 50%;
+      background: var(--cream);
       padding: 5px;
+      box-shadow: 0 8px 22px rgba(0,0,0,.22);
     }
 
     .brand span {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 20px;
+      font-size: 21px;
       font-weight: 700;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
+      letter-spacing: .08em;
     }
 
     nav {
       display: flex;
       align-items: center;
-      gap: 28px;
+      gap: 24px;
     }
 
     nav a {
-      font-size: 12px;
       color: var(--muted);
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      transition: color .25s ease;
+      font-size: 13px;
+      transition: color .2s ease;
     }
 
     nav a:hover {
-      color: var(--text);
+      color: var(--cream);
     }
 
-    .nav-cta {
-      border: 1px solid var(--gold);
-      color: var(--gold);
-      padding: 12px 16px;
-      font-size: 12px;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      transition: .25s ease;
+    .nav-cta,
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      min-height: 48px;
+      padding: 13px 20px;
+      background: var(--cream);
+      color: #241914;
+      font-weight: 700;
+      font-size: 14px;
+      transition: transform .2s ease, background .2s ease, color .2s ease, border .2s ease;
+      box-shadow: 0 12px 30px rgba(0,0,0,.18);
     }
 
-    .nav-cta:hover {
+    .nav-cta:hover,
+    .btn:hover {
+      transform: translateY(-2px);
       background: var(--gold);
+    }
+
+    .btn.secondary {
+      background: transparent;
+      color: var(--cream);
+      border: 1px solid var(--line);
+      box-shadow: none;
+    }
+
+    .btn.secondary:hover {
+      border-color: var(--gold);
       color: var(--bg);
+      background: var(--gold);
     }
 
     .hero {
-      min-height: calc(100vh - 110px);
-      display: grid;
-      grid-template-columns: 1.08fr .92fr;
-      border-bottom: 1px solid var(--line);
+      padding: 78px 0 70px;
     }
 
-    .hero-copy {
-      padding: 110px 0 90px;
-      display: flex;
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.04fr .96fr;
+      gap: 42px;
       align-items: center;
     }
 
     .eyebrow {
       color: var(--gold);
-      letter-spacing: 0.34em;
+      font-size: 13px;
+      letter-spacing: .08em;
       text-transform: uppercase;
-      font-size: 12px;
-      margin-bottom: 24px;
+      margin-bottom: 16px;
+      font-weight: 700;
     }
 
     h1 {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(60px, 10vw, 126px);
-      line-height: .86;
-      letter-spacing: .035em;
-      font-weight: 600;
-      margin-bottom: 30px;
-      text-transform: uppercase;
+      font-size: clamp(54px, 9vw, 108px);
+      line-height: .9;
+      letter-spacing: -.035em;
+      margin-bottom: 24px;
     }
 
     .hero-text {
+      color: var(--cream-soft);
       max-width: 650px;
-      color: var(--muted);
-      font-size: 17px;
-      margin-bottom: 34px;
+      font-size: 19px;
+      margin-bottom: 30px;
     }
 
-    .hero-actions,
     .button-row {
       display: flex;
-      gap: 14px;
       flex-wrap: wrap;
+      gap: 12px;
     }
 
-    .btn {
-      min-height: 52px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 14px 20px;
-      border: 1px solid var(--gold);
-      color: var(--gold);
-      background: transparent;
-      font-size: 12px;
-      letter-spacing: .2em;
-      text-transform: uppercase;
-      transition: .25s ease;
-      cursor: pointer;
+    .hero-card {
+      position: relative;
+      background: linear-gradient(145deg, rgba(246,239,229,.10), rgba(201,168,124,.08));
+      border: 1px solid var(--line);
+      border-radius: 42px;
+      padding: 22px;
+      min-height: 560px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
     }
 
-    .btn:hover {
-      background: var(--gold);
-      color: var(--bg);
-    }
-
-    .btn.filled {
-      background: var(--gold);
-      color: var(--bg);
-    }
-
-    .btn.filled:hover {
-      background: transparent;
-      color: var(--gold);
-    }
-
-    .hero-visual {
-      border-left: 1px solid var(--line);
-      display: grid;
-      place-items: center;
-      padding: 60px 28px;
+    .hero-photo {
+      height: 100%;
+      min-height: 516px;
+      border-radius: 30px;
       background:
-        linear-gradient(rgba(15,15,15,.35), rgba(15,15,15,.9)),
-        url('https://images.unsplash.com/photo-1442512595331-e89e73853f31?q=80&w=1800&auto=format&fit=crop') center/cover;
-      min-height: 600px;
+        linear-gradient(to bottom, rgba(23,18,15,.05), rgba(23,18,15,.78)),
+        url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1600&auto=format&fit=crop') center/cover;
     }
 
-    .logo-frame {
-      width: min(420px, 100%);
-      aspect-ratio: 1 / 1;
-      border: 1px solid rgba(201,168,124,.45);
-      display: grid;
-      place-items: center;
-      background: rgba(15,15,15,.72);
-      backdrop-filter: blur(6px);
-      padding: 42px;
+    .logo-float {
+      position: absolute;
+      left: 42px;
+      right: 42px;
+      bottom: 42px;
+      background: rgba(23,18,15,.76);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(246,239,229,.14);
+      border-radius: 28px;
+      padding: 22px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
     }
 
-    .logo-frame img {
-      width: 100%;
-      max-height: 100%;
+    .logo-float img {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
       object-fit: contain;
-      filter: drop-shadow(0 20px 36px rgba(0,0,0,.35));
+      background: var(--cream);
+      padding: 7px;
+    }
+
+    .logo-float strong {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28px;
+      display: block;
+      line-height: 1;
+    }
+
+    .logo-float span {
+      color: var(--muted);
+      font-size: 14px;
     }
 
     section {
-      padding: 110px 0;
-      border-bottom: 1px solid var(--line);
+      padding: 84px 0;
     }
 
-    .section-label {
+    .section-head {
+      max-width: 760px;
+      margin-bottom: 34px;
+    }
+
+    .label {
       color: var(--gold);
-      letter-spacing: .32em;
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: .08em;
       text-transform: uppercase;
-      font-size: 12px;
-      margin-bottom: 20px;
+      margin-bottom: 12px;
     }
 
     h2 {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(42px, 6vw, 76px);
-      line-height: .96;
-      font-weight: 600;
-      margin-bottom: 28px;
+      font-size: clamp(38px, 5vw, 64px);
+      line-height: 1;
+      letter-spacing: -.025em;
+      margin-bottom: 18px;
     }
 
-    .lead {
-      max-width: 760px;
+    .lead,
+    .section-head p {
       color: var(--muted);
       font-size: 18px;
     }
@@ -283,241 +297,225 @@
     .pillars {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      border: 1px solid var(--line);
-      background: rgba(24,24,24,.58);
+      gap: 18px;
     }
 
     .pillar {
-      min-height: 360px;
-      padding: 48px;
-    }
-
-    .pillar:not(:last-child) {
-      border-right: 1px solid var(--line);
-    }
-
-    .icon {
-      width: 64px;
-      height: 64px;
+      background: rgba(246,239,229,.055);
       border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 30px;
+      box-shadow: 0 12px 38px rgba(0,0,0,.14);
+    }
+
+    .pillar-icon {
+      width: 54px;
+      height: 54px;
+      border-radius: 18px;
+      background: rgba(201,168,124,.15);
       color: var(--gold);
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      display: grid;
+      place-items: center;
       font-size: 22px;
-      margin-bottom: 38px;
+      margin-bottom: 22px;
     }
 
     .pillar h3 {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 38px;
-      line-height: 1;
-      margin-bottom: 18px;
-      letter-spacing: .06em;
+      font-size: 34px;
+      margin-bottom: 10px;
     }
 
     .pillar p {
       color: var(--muted);
-      max-width: 280px;
     }
 
-    .manifesto {
-      background: var(--panel);
+    .warm-band {
+      background: var(--cream);
+      color: #241914;
+      border-radius: 46px;
+      padding: 56px;
+      display: grid;
+      grid-template-columns: 1fr .8fr;
+      gap: 36px;
+      align-items: center;
+      box-shadow: var(--shadow);
     }
 
-    .manifesto-text {
-      font-family: 'Cormorant Garamond', serif;
-      max-width: 920px;
-      font-size: clamp(38px, 5vw, 68px);
-      line-height: 1.18;
-      font-style: italic;
-      color: var(--text);
+    .warm-band h2 {
+      color: #241914;
+    }
+
+    .warm-band p {
+      color: #685448;
+      font-size: 18px;
+    }
+
+    .warm-note {
+      background: #fff8ef;
+      border-radius: 28px;
+      padding: 28px;
+      color: #5b4638;
     }
 
     .split {
       display: grid;
-      grid-template-columns: .9fr 1.1fr;
-      gap: 70px;
-      align-items: center;
+      grid-template-columns: .92fr 1.08fr;
+      gap: 34px;
+      align-items: stretch;
     }
 
-    .image-panel {
-      min-height: 620px;
+    .image-box {
+      min-height: 520px;
+      border-radius: 34px;
       background-size: cover;
       background-position: center;
-      filter: grayscale(100%) contrast(112%);
+      box-shadow: var(--shadow);
       border: 1px solid var(--line);
+      overflow: hidden;
     }
 
-    .content-panel p {
+    .content-box {
+      background: rgba(246,239,229,.055);
+      border: 1px solid var(--line);
+      border-radius: 34px;
+      padding: 38px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .content-box p {
       color: var(--muted);
+      margin-bottom: 18px;
       font-size: 17px;
-      margin-bottom: 22px;
     }
 
-    .micro-list {
+    .small-list {
       display: grid;
       gap: 12px;
-      margin-top: 28px;
+      margin-top: 18px;
     }
 
-    .micro-item {
-      border-top: 1px solid var(--line);
-      padding-top: 16px;
+    .small-item {
+      background: rgba(0,0,0,.16);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 15px 16px;
       color: var(--muted);
-      display: flex;
-      justify-content: space-between;
-      gap: 18px;
     }
 
-    .micro-item strong {
-      color: var(--text);
-      font-weight: 500;
+    .small-item strong {
+      color: var(--cream);
+      display: block;
+      margin-bottom: 4px;
     }
 
-    .adoption-grid {
+    .adoption-cards {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 28px;
-      margin-top: 46px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+      margin-top: 30px;
     }
 
     .adoption-card {
-      background: var(--panel);
+      background: rgba(246,239,229,.055);
       border: 1px solid var(--line);
-      padding: 34px;
-      min-height: 330px;
+      border-radius: var(--radius);
+      padding: 30px;
     }
 
     .adoption-card h3 {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 40px;
-      margin-bottom: 18px;
-      letter-spacing: .04em;
+      font-size: 36px;
+      margin-bottom: 12px;
     }
 
-    .adoption-card p,
-    .adoption-card li {
+    .adoption-card p {
       color: var(--muted);
     }
 
-    .adoption-card ul {
-      margin-top: 20px;
-      padding-left: 18px;
-      display: grid;
-      gap: 10px;
-    }
-
-    .animal-list {
+    .animal-preview {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 18px;
-      margin-top: 42px;
+      margin-top: 30px;
     }
 
     .animal-card {
+      background: var(--card);
       border: 1px solid var(--line);
-      background: #121212;
+      border-radius: 28px;
       overflow: hidden;
+      box-shadow: 0 18px 42px rgba(0,0,0,.18);
     }
 
-    .animal-photo {
-      height: 260px;
+    .animal-img {
+      height: 230px;
       background-size: cover;
       background-position: center;
-      filter: grayscale(100%) contrast(110%);
     }
 
-    .animal-body {
-      padding: 24px;
+    .animal-info {
+      padding: 22px;
     }
 
-    .status {
+    .tag {
       display: inline-flex;
+      font-size: 12px;
       color: var(--gold);
-      border: 1px solid rgba(201,168,124,.45);
+      background: rgba(201,168,124,.11);
       padding: 6px 10px;
-      font-size: 11px;
-      letter-spacing: .16em;
-      text-transform: uppercase;
-      margin-bottom: 14px;
+      border-radius: 999px;
+      margin-bottom: 12px;
     }
 
-    .animal-body h3 {
+    .animal-info h3 {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 32px;
-      margin-bottom: 8px;
+      font-size: 30px;
+      margin-bottom: 6px;
     }
 
-    .animal-body p {
+    .animal-info p {
       color: var(--muted);
       font-size: 14px;
     }
 
-    .visit-grid {
+    .visit-box {
+      background: rgba(246,239,229,.055);
+      border: 1px solid var(--line);
+      border-radius: 38px;
+      padding: 42px;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 60px;
-    }
-
-    .location-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(50px, 7vw, 90px);
-      letter-spacing: .28em;
-      font-weight: 400;
-      margin-bottom: 30px;
-    }
-
-    .info-lines {
-      color: var(--muted);
-      display: grid;
-      gap: 12px;
-    }
-
-    .hours {
-      margin-top: 34px;
-      border-top: 1px solid var(--line);
-      padding-top: 24px;
-      display: grid;
-      gap: 12px;
-      max-width: 460px;
-    }
-
-    .hour-row {
-      display: flex;
-      justify-content: space-between;
-      color: var(--muted);
-      gap: 18px;
-    }
-
-    .form-box {
-      background: var(--panel);
-      border: 1px solid var(--line);
-      padding: 42px;
-    }
-
-    .form-box p {
-      color: var(--muted);
-      margin-bottom: 24px;
-    }
-
-    footer {
-      padding: 44px 0;
-      background: #070707;
-    }
-
-    .footer-content {
-      display: flex;
-      justify-content: space-between;
+      gap: 34px;
       align-items: center;
-      gap: 28px;
+    }
+
+    .visit-info {
       color: var(--muted);
-      font-size: 13px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .footer {
+      padding: 42px 0;
+      border-top: 1px solid var(--line);
+      background: rgba(0,0,0,.2);
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: 14px;
     }
 
     .footer-links {
       display: flex;
-      gap: 24px;
+      gap: 18px;
       flex-wrap: wrap;
     }
 
@@ -525,353 +523,316 @@
       color: var(--gold);
     }
 
-    .edit-note {
-      border-left: 3px solid var(--gold);
-      padding: 16px 18px;
-      background: rgba(201,168,124,.08);
-      color: var(--soft);
-      margin-top: 24px;
-      font-size: 14px;
-    }
-
-    @media (max-width: 1020px) {
+    @media (max-width: 960px) {
       nav {
         display: none;
       }
 
-      .hero,
+      .hero-grid,
+      .warm-band,
       .split,
-      .visit-grid,
-      .adoption-grid {
+      .visit-box {
         grid-template-columns: 1fr;
-      }
-
-      .hero-visual {
-        border-left: 0;
-        border-top: 1px solid var(--line);
-        min-height: 460px;
       }
 
       .pillars,
-      .animal-list {
+      .animal-preview {
         grid-template-columns: 1fr;
       }
 
-      .pillar:not(:last-child) {
-        border-right: 0;
-        border-bottom: 1px solid var(--line);
+      .adoption-cards {
+        grid-template-columns: 1fr;
       }
 
-      .image-panel {
-        min-height: 460px;
+      .hero-card {
+        min-height: 430px;
+      }
+
+      .hero-photo {
+        min-height: 390px;
+      }
+
+      .image-box {
+        min-height: 390px;
       }
     }
 
     @media (max-width: 640px) {
       .container {
-        padding: 0 20px;
+        padding: 0 18px;
       }
 
       .brand span {
-        font-size: 15px;
-        letter-spacing: .12em;
-      }
-
-      .brand img {
-        width: 40px;
-        height: 40px;
+        font-size: 17px;
       }
 
       .nav-cta {
         display: none;
       }
 
-      .hero-copy {
-        padding: 76px 0 64px;
+      .hero {
+        padding: 54px 0 48px;
       }
 
-      .hero-actions,
-      .button-row {
-        width: 100%;
+      section {
+        padding: 62px 0;
       }
 
+      .button-row,
       .btn {
         width: 100%;
       }
 
-      section {
-        padding: 78px 0;
-      }
-
-      .pillar,
-      .adoption-card,
-      .form-box {
+      .warm-band,
+      .content-box,
+      .visit-box {
         padding: 28px;
+        border-radius: 30px;
       }
 
-      .footer-content {
-        flex-direction: column;
-        align-items: flex-start;
+      .logo-float {
+        left: 28px;
+        right: 28px;
+        bottom: 28px;
       }
     }
   </style>
 </head>
 
 <body>
-  <!-- EDITE AQUI: frase pequena do topo -->
-  <div class="top-note">Since 2025 • Berlin • Coffee. Clothing. Adoption.</div>
+  <div class="top-note">Desde 2025 • Berlim • café, cuidado e adoção responsável</div>
 
   <header>
     <div class="container navbar">
-      <a class="brand" href="#home" aria-label="Ƭrue Ӈeartᵣₚ">
-        <!-- IMPORTANTE: suba sua logo no GitHub como images/logo.png -->
+      <a class="brand" href="#inicio" aria-label="Ƭrue Ӈeartᵣₚ">
+        <!-- Suba sua logo no GitHub como images/logo.png -->
         <img src="images/logo.png" alt="Logo Ƭrue Ӈeartᵣₚ">
         <span>Ƭrue Ӈeartᵣₚ</span>
       </a>
 
       <nav aria-label="Menu principal">
-        <a href="#about">About</a>
-        <a href="#coffee">Coffee</a>
-        <a href="#clothing">Clothing</a>
-        <a href="#adoption">Adoption</a>
-        <a href="#visit">Visit</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#cafeteria">Cafeteria</a>
+        <a href="#adocao">Adoção</a>
+        <a href="#roupas">Roupas</a>
+        <a href="#visita">Visita</a>
       </nav>
 
-      <!-- TROQUE O LINK ABAIXO PELO GOOGLE FORMS QUANDO ESTIVER PRONTO -->
-      <a class="nav-cta" href="https://forms.gle/SEU-LINK-AQUI" target="_blank" rel="noopener">Apply</a>
+      <!-- Troque pelo link do Google Forms quando estiver pronto -->
+      <a class="nav-cta" href="https://forms.gle/SEU-LINK-AQUI" target="_blank" rel="noopener">Tenho interesse</a>
     </div>
   </header>
 
-  <main id="home">
+  <main id="inicio">
     <section class="hero">
-      <div class="container hero-copy">
+      <div class="container hero-grid">
         <div>
-          <div class="eyebrow">Follow your heart</div>
+          <div class="eyebrow">Follow your heart and never forget who you are</div>
           <h1>TRUE<br>HEART</h1>
           <p class="hero-text">
-            Coffee. Clothing. Adoption. A cafeteria and premium clothing project created to give visibility, care and real opportunities to animals waiting for responsible homes.
+            Uma cafeteria acolhedora, uma marca de roupas premium e um espaço criado para aproximar animais resgatados de pessoas prontas para adotar com responsabilidade.
           </p>
-          <div class="hero-actions">
-            <a class="btn filled" href="#adoption">Adoption Room</a>
-            <!-- TROQUE O LINK ABAIXO PELO GOOGLE FORMS QUANDO ESTIVER PRONTO -->
-            <a class="btn" href="https://forms.gle/SEU-LINK-AQUI" target="_blank" rel="noopener">Faça seu pedido</a>
+          <div class="button-row">
+            <a class="btn" href="#adocao">Conhecer a adoção</a>
+            <a class="btn secondary" href="#cafeteria">Ver a cafeteria</a>
           </div>
         </div>
-      </div>
 
-      <div class="hero-visual">
-        <div class="logo-frame">
-          <!-- IMPORTANTE: suba sua logo no GitHub como images/logo.png -->
-          <img src="images/logo.png" alt="Logo True Heart">
+        <div class="hero-card">
+          <div class="hero-photo"></div>
+          <div class="logo-float">
+            <img src="images/logo.png" alt="Logo True Heart">
+            <div>
+              <strong>café com propósito</strong>
+              <span>um lugar para estar, cuidar e fazer parte</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="about">
+    <section id="sobre">
       <div class="container">
-        <div class="section-label">About</div>
-        <h2>A café with a purpose. A brand built to help.</h2>
-        <p class="lead">
-          Ƭrue Ӈeartᵣₚ nasce como uma cafeteria com identidade forte, uma linha de roupas premium e uma causa fixa: ser ponte entre ONGs, animais resgatados e pessoas preparadas para adotar com responsabilidade.
-        </p>
+        <div class="section-head">
+          <div class="label">Sobre a marca</div>
+          <h2>Um lugar bonito só vale a pena quando também faz sentido.</h2>
+          <p>
+            A Ƭrue Ӈeartᵣₚ nasce da vontade de criar uma experiência agradável e, ao mesmo tempo, útil: tomar um café, conhecer uma marca feita com cuidado e ajudar animais a encontrarem um lar.
+          </p>
+        </div>
 
-        <div class="edit-note">
-          Esta é uma versão inicial do texto. Depois, troque por uma apresentação oficial da marca quando a operação estiver mais definida.
+        <div class="pillars">
+          <article class="pillar">
+            <div class="pillar-icon">☕</div>
+            <h3>Cafeteria</h3>
+            <p>Um espaço confortável para sentar, conversar, trabalhar um pouco ou simplesmente fazer uma pausa com calma.</p>
+          </article>
+
+          <article class="pillar">
+            <div class="pillar-icon">♡</div>
+            <h3>Adoção</h3>
+            <p>Uma ponte entre ONGs parceiras, animais resgatados e pessoas interessadas em uma adoção responsável.</p>
+          </article>
+
+          <article class="pillar">
+            <div class="pillar-icon">✦</div>
+            <h3>Roupas</h3>
+            <p>Peças premium com identidade True Heart, pensadas para vestir bem e ajudar a sustentar o propósito da marca.</p>
+          </article>
         </div>
       </div>
     </section>
 
     <section>
-      <div class="container pillars">
-        <article class="pillar">
-          <div class="icon">◯</div>
-          <h3>BREWED</h3>
-          <p>
-            A cafeteria como ponto de encontro: café, pausa, presença e uma experiência conectada ao propósito da marca.
-          </p>
-        </article>
-
-        <article class="pillar">
-          <div class="icon">△</div>
-          <h3>WORN</h3>
-          <p>
-            Roupas premium com True Heart escrito, feitas em Portugal, com qualidade e intenção além da estética.
-          </p>
-        </article>
-
-        <article class="pillar">
-          <div class="icon">✢</div>
-          <h3>ADOPTED</h3>
-          <p>
-            Um espaço separado e supervisionado para dar visibilidade a animais de ONGs parceiras em ciclos de adoção.
-          </p>
-        </article>
-      </div>
-    </section>
-
-    <section class="manifesto">
       <div class="container">
-        <p class="manifesto-text">
-          More than coffee. More than clothing. A place created to connect care, presence and responsible adoption.
-        </p>
-      </div>
-    </section>
-
-    <section id="coffee">
-      <div class="container split">
-        <div class="image-panel" style="background-image: url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1800&auto=format&fit=crop');"></div>
-        <div class="content-panel">
-          <div class="section-label">Coffee</div>
-          <h2>The café is the front door.</h2>
-          <p>
-            A experiência começa na cafeteria: um espaço elegante, acolhedor e separado da área dos animais. Quem entra pode conhecer o projeto, ver a área de adoção através de vidro e decidir se quer participar, visitar ou apoiar.
-          </p>
-          <p>
-            A área de alimentação deve permanecer separada da área animal. Isso não é apenas estética: é higiene, segurança e respeito pela operação.
-          </p>
-          <div class="micro-list">
-            <div class="micro-item"><strong>Ambiente</strong><span>Café, marca e propósito</span></div>
-            <div class="micro-item"><strong>Separação</strong><span>Vidros, portas e circulação controlada</span></div>
-            <div class="micro-item"><strong>Experiência</strong><span>Ver, conhecer e apoiar sem invadir</span></div>
+        <div class="warm-band">
+          <div>
+            <div class="label">A ideia</div>
+            <h2>Você entra pelo café. Talvez saia fazendo parte de uma história maior.</h2>
+            <p>
+              A proposta não é transformar animais em atração. É criar um ambiente seguro, separado e respeitoso, onde eles ganham visibilidade e as pessoas conhecem suas histórias com calma.
+            </p>
+          </div>
+          <div class="warm-note">
+            <strong>O coração do projeto:</strong><br>
+            ser uma ponte. A cafeteria oferece espaço, visibilidade e cuidado; as ONGs parceiras conduzem o processo de adoção com responsabilidade.
           </div>
         </div>
       </div>
     </section>
 
-    <section id="clothing">
+    <section id="cafeteria">
       <div class="container split">
-        <div class="content-panel">
-          <div class="section-label">Clothing</div>
-          <h2>Premium garments made with intention.</h2>
+        <div class="image-box" style="background-image: url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1600&auto=format&fit=crop');"></div>
+        <div class="content-box">
+          <div class="label">Cafeteria</div>
+          <h2>Um espaço para querer ficar.</h2>
           <p>
-            A linha True Heart Wear deve ser desejável por si só: tecido premium, produção em Portugal, corte bem pensado e identidade visual forte.
+            A cafeteria é a porta de entrada da True Heart: café, conforto, conversa e uma atmosfera que convida a permanecer.
           </p>
           <p>
-            A causa não deve parecer desculpa para vender qualquer produto. A roupa precisa sustentar a promessa da marca: qualidade, permanência e propósito.
+            A área dos animais fica separada da área de alimentação, com vidro e acesso controlado. Assim, a experiência continua bonita para quem visita e segura para os animais.
+          </p>
+          <div class="small-list">
+            <div class="small-item"><strong>Ambiente acolhedor</strong> luz quente, madeira, aromas de café e sensação de refúgio.</div>
+            <div class="small-item"><strong>Separação responsável</strong> animais sem circulação na área de alimentos.</div>
+            <div class="small-item"><strong>Contato com propósito</strong> quem quiser ajudar encontra caminhos claros para participar.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="adocao">
+      <div class="container">
+        <div class="section-head">
+          <div class="label">Sala de adoção</div>
+          <h2>Animais vistos com carinho, não como vitrine.</h2>
+          <p>
+            A sala de adoção é um espaço separado, pensado para dar visibilidade a animais de ONGs parceiras sem comprometer o bem-estar deles. A visita é controlada, o contato é supervisionado e a adoção segue critérios responsáveis.
+          </p>
+        </div>
+
+        <div class="adoption-cards">
+          <article class="adoption-card">
+            <h3>Ciclos de 7 a 15 dias</h3>
+            <p>
+              A ideia é trabalhar com ciclos de animais em destaque por uma ou duas semanas. Em um período, gatos. Em outro, cachorros. Sem misturar grupos e sem forçar convivência entre espécies.
+            </p>
+          </article>
+
+          <article class="adoption-card">
+            <h3>Espaços separados</h3>
+            <p>
+              Gatos e cachorros precisam de estruturas diferentes. Por isso, o projeto considera salas e pátios adaptados, com áreas de descanso, esconderijo, controle de entrada e supervisão.
+            </p>
+          </article>
+        </div>
+
+        <div class="animal-preview">
+          <article class="animal-card">
+            <div class="animal-img" style="background-image: url('https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?q=80&w=1200&auto=format&fit=crop');"></div>
+            <div class="animal-info">
+              <span class="tag">ciclo futuro</span>
+              <h3>Gatos</h3>
+              <p>Um espaço calmo, verticalizado e com refúgios para gatos que estejam aptos a receber visitas.</p>
+            </div>
+          </article>
+
+          <article class="animal-card">
+            <div class="animal-img" style="background-image: url('https://images.unsplash.com/photo-1552053831-71594a27632d?q=80&w=1200&auto=format&fit=crop');"></div>
+            <div class="animal-info">
+              <span class="tag">ciclo futuro</span>
+              <h3>Cachorros</h3>
+              <p>Um pátio adaptado, seguro e supervisionado para encontros responsáveis com cães selecionados.</p>
+            </div>
+          </article>
+
+          <article class="animal-card">
+            <div class="animal-img" style="background-image: url('https://images.unsplash.com/photo-1601758228041-f3b2795255f1?q=80&w=1200&auto=format&fit=crop');"></div>
+            <div class="animal-info">
+              <span class="tag">parcerias</span>
+              <h3>ONGs</h3>
+              <p>A True Heart atua como ponte. As ONGs parceiras ajudam na seleção, triagem e adoção responsável.</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="button-row" style="margin-top: 28px;">
+          <!-- Troque pelo formulário de adoção quando estiver pronto -->
+          <a class="btn" href="https://forms.gle/SEU-LINK-AQUI" target="_blank" rel="noopener">Tenho interesse em adotar</a>
+          <a class="btn secondary" href="https://forms.gle/SEU-LINK-AQUI" target="_blank" rel="noopener">Sou ONG ou protetor</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="roupas">
+      <div class="container split">
+        <div class="content-box">
+          <div class="label">True Heart Wear</div>
+          <h2>Roupas premium com propósito real.</h2>
+          <p>
+            A linha de roupas nasce para fortalecer a marca e ajudar a financiar o cuidado por trás do projeto. Peças com tecido premium, produção em Portugal e identidade True Heart.
+          </p>
+          <p>
+            A causa não substitui a qualidade. A roupa precisa ser bonita, confortável e bem feita — porque ajudar não deve significar aceitar qualquer coisa.
           </p>
           <div class="button-row">
-            <!-- TROQUE O LINK QUANDO TIVER LOJA OU FORMULÁRIO DE INTERESSE -->
-            <a class="btn" href="https://forms.gle/SEU-LINK-AQUI" target="_blank" rel="noopener">Lista de interesse</a>
+            <!-- Troque pelo formulário ou loja quando estiver pronto -->
+            <a class="btn secondary" href="https://forms.gle/SEU-LINK-AQUI" target="_blank" rel="noopener">Entrar na lista de interesse</a>
           </div>
         </div>
-        <div class="image-panel" style="background-image: url('https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1800&auto=format&fit=crop');"></div>
+        <div class="image-box" style="background-image: url('https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1600&auto=format&fit=crop');"></div>
       </div>
     </section>
 
-    <section id="adoption">
-      <div class="container">
-        <div class="section-label">Adoption Room</div>
-        <h2>A separated adoption space connected to the café.</h2>
-        <p class="lead">
-          A Ƭrue Ӈeartᵣₚ atua como ponte: oferece visibilidade, espaço e estrutura para animais de ONGs parceiras encontrarem lares responsáveis. O processo de triagem e adoção deve ser feito com parceiros qualificados.
-        </p>
-
-        <div class="adoption-grid">
-          <article class="adoption-card">
-            <h3>Cycles</h3>
-            <p>
-              A ideia é trabalhar com ciclos de 7 a 15 dias, alternando espécies de forma responsável: gatos em um ciclo, cachorros em outro, sem mistura e sem contato visual direto quando isso gerar estresse.
-            </p>
-            <ul>
-              <li>Ciclos pequenos e supervisionados.</li>
-              <li>Entrada controlada mediante horário ou taxa de apoio.</li>
-              <li>Animais selecionados conforme perfil e bem-estar.</li>
-            </ul>
-          </article>
-
-          <article class="adoption-card">
-            <h3>Spaces</h3>
-            <p>
-              O ideal é ter áreas separadas: uma sala para gatos, um pátio adaptado para cães e uma retaguarda fora do público para descanso, adaptação e manejo.
-            </p>
-            <ul>
-              <li>Sem animais circulando na área de alimentos.</li>
-              <li>Vidros e portas separando os ambientes.</li>
-              <li>Espaços onde os animais possam se esconder e descansar.</li>
-            </ul>
-          </article>
-        </div>
-
-        <div class="animal-list">
-          <article class="animal-card">
-            <div class="animal-photo" style="background-image: url('https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?q=80&w=1200&auto=format&fit=crop');"></div>
-            <div class="animal-body">
-              <span class="status">Coming soon</span>
-              <h3>Cat Cycle</h3>
-              <p>Espaço reservado para o próximo ciclo de gatos disponíveis para adoção responsável.</p>
-            </div>
-          </article>
-
-          <article class="animal-card">
-            <div class="animal-photo" style="background-image: url('https://images.unsplash.com/photo-1552053831-71594a27632d?q=80&w=1200&auto=format&fit=crop');"></div>
-            <div class="animal-body">
-              <span class="status">Coming soon</span>
-              <h3>Dog Cycle</h3>
-              <p>Espaço reservado para o próximo ciclo de cães disponíveis para adoção responsável.</p>
-            </div>
-          </article>
-
-          <article class="animal-card">
-            <div class="animal-photo" style="background-image: url('https://images.unsplash.com/photo-1601758228041-f3b2795255f1?q=80&w=1200&auto=format&fit=crop');"></div>
-            <div class="animal-body">
-              <span class="status">Partner needed</span>
-              <h3>ONG Partners</h3>
-              <p>Área para explicar quais parceiros participam e como o processo de adoção será conduzido.</p>
-            </div>
-          </article>
-        </div>
-
-        <div class="button-row" style="margin-top: 34px;">
-          <!-- TROQUE O LINK ABAIXO PELO GOOGLE FORMS QUANDO ESTIVER PRONTO -->
-          <a class="btn filled" href="https://forms.gle/SEU-LINK-AQUI" target="_blank" rel="noopener">Quero adotar</a>
-          <a class="btn" href="#visit">Como visitar</a>
-        </div>
-      </div>
-    </section>
-
-    <section id="visit">
-      <div class="container visit-grid">
+    <section id="visita">
+      <div class="container visit-box">
         <div>
-          <div class="section-label">Visit</div>
-          <div class="location-title">BERLIN</div>
-          <div class="info-lines">
-            <p>Endereço ainda não definido.</p>
-            <p>Marcação: @trueheartrp</p>
-            <p>Since 2025</p>
-          </div>
-
-          <div class="hours">
-            <div class="hour-row"><span>MON — FRI</span><span>To be announced</span></div>
-            <div class="hour-row"><span>SAT</span><span>To be announced</span></div>
-            <div class="hour-row"><span>SUN</span><span>To be announced</span></div>
-          </div>
-        </div>
-
-        <div class="form-box">
-          <div class="section-label">Forms</div>
-          <h2>Applications and requests.</h2>
-          <p>
-            Use Google Forms para separar os pedidos: adoção, parceria com ONG, lista de interesse para roupas e contato geral. Não misture tudo em um único formulário se começar a receber volume.
+          <div class="label">Visita</div>
+          <h2>Berlim, em breve.</h2>
+          <p class="lead">
+            O endereço, horários e formulários oficiais serão adicionados quando a operação estiver mais avançada. Por enquanto, este site funciona como apresentação inicial da marca.
           </p>
-          <div class="button-row">
-            <!-- TROQUE O LINK ABAIXO PELO GOOGLE FORMS QUANDO ESTIVER PRONTO -->
-            <a class="btn filled" href="https://forms.gle/SEU-LINK-AQUI" target="_blank" rel="noopener">Faça seu pedido</a>
-            <a class="btn" href="#adoption">Adoption Room</a>
-          </div>
+        </div>
+        <div class="visit-info">
+          <p><strong>Marcação:</strong> @trueheartrp</p>
+          <p><strong>Desde:</strong> 2025</p>
+          <p><strong>Local:</strong> Berlim</p>
+          <p><strong>Formulários:</strong> adoção, ONGs, roupas e contato geral serão separados para manter tudo organizado.</p>
         </div>
       </div>
     </section>
   </main>
 
-  <footer>
-    <div class="container footer-content">
-      <div>© 2025 Ƭrue Ӈeartᵣₚ. All rights reserved.</div>
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>© 2025 Ƭrue Ӈeartᵣₚ. Todos os direitos reservados.</div>
       <div class="footer-links">
-        <a href="#about">About</a>
-        <a href="#coffee">Coffee</a>
-        <a href="#clothing">Clothing</a>
-        <a href="#adoption">Adoption</a>
-        <a href="#visit">Visit</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#cafeteria">Cafeteria</a>
+        <a href="#adocao">Adoção</a>
+        <a href="#roupas">Roupas</a>
+        <a href="#visita">Visita</a>
       </div>
     </div>
   </footer>
