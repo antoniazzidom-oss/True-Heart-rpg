@@ -213,6 +213,39 @@
     .price{white-space:nowrap;color:var(--brown);font-weight:800}
     .product-body p{font-size:14px;color:var(--muted);margin-bottom:18px;flex:1}
 
+
+    .menu-category{
+      margin-top:34px;
+    }
+    .category-heading{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:18px;
+      margin-bottom:16px;
+      padding-top:8px;
+    }
+    .category-heading h3{
+      font-family:'Cormorant Garamond',serif;
+      font-size:40px;
+      line-height:1;
+      color:var(--ink);
+    }
+    .category-heading p{
+      color:var(--muted);
+      font-size:15px;
+      max-width:560px;
+    }
+    .menu-note{
+      margin-top:22px;
+      color:var(--muted);
+      font-size:14px;
+      background:rgba(255,253,249,.72);
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:16px 18px;
+    }
+
     .how-box{
       padding:20px 24px 24px
     }
@@ -287,6 +320,7 @@
       .step{border-right:0;border-bottom:1px solid var(--line)}
       .step:last-child{border-bottom:0}
       .hero-actions,.btn{width:100%}
+      .category-heading{align-items:flex-start;flex-direction:column}
       .footer-bottom .container{flex-direction:column;text-align:center}
       .adopt-copy{padding:28px}
     }
@@ -418,49 +452,256 @@
         <div class="section-head">
           <div class="kicker">Cardápio</div>
           <h2>Sabores para ficar mais um pouco.</h2>
-          <p>Vitrine inicial do cardápio. Todos os botões abaixo levam para o formulário de pedido geral.</p>
+          <p>Cardápio inspirado na estrutura da Rita Specialty Coffee, adaptado para a True Heart em euro. Todos os botões abaixo levam para o formulário de pedido geral.</p>
         </div>
 
-        <div class="product-grid">
+        <div class="menu-category">
+          <div class="category-heading">
+            <h3>Cafés</h3>
+            <p>Clássicos de cafeteria para quem quer uma pausa rápida ou um café com calma.</p>
+          </div>
+
+          <div class="product-grid">
+          <article class="card product-card">
+            <div class="product-image" style="background-image:url('https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?q=80&w=1200&auto=format&fit=crop')"></div>
+            <div class="product-body">
+              <span class="tag">café</span>
+              <div class="item-head"><h3>Espresso</h3><span class="price">€4,80</span></div>
+              <p>Um shot intenso, curto e direto, para quem gosta de café sem distrações.</p>
+              <a class="btn btn-dark js-pedido" href="#">Pedir</a>
+            </div>
+          </article>
+
+          <article class="card product-card">
+            <div class="product-image" style="background-image:url('https://images.unsplash.com/photo-1498804103079-a6351b050096?q=80&w=1200&auto=format&fit=crop')"></div>
+            <div class="product-body">
+              <span class="tag">café</span>
+              <div class="item-head"><h3>Americano</h3><span class="price">€5,60</span></div>
+              <p>Espresso alongado com água quente, leve e elegante para acompanhar o dia.</p>
+              <a class="btn btn-dark js-pedido" href="#">Pedir</a>
+            </div>
+          </article>
+
+          <article class="card product-card">
+            <div class="product-image" style="background-image:url('https://images.unsplash.com/photo-1517701604599-bb29b565090c?q=80&w=1200&auto=format&fit=crop')"></div>
+            <div class="product-body">
+              <span class="tag">com leite</span>
+              <div class="item-head"><h3>Cappuccino</h3><span class="price">€6,90</span></div>
+              <p>Café, leite cremoso e espuma delicada para uma pausa mais confortável.</p>
+              <a class="btn btn-dark js-pedido" href="#">Pedir</a>
+            </div>
+          </article>
+
           <article class="card product-card">
             <div class="product-image" style="background-image:url('https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=1200&auto=format&fit=crop')"></div>
             <div class="product-body">
-              <span class="tag">café</span>
-              <div class="item-head"><h3>Latte True Heart</h3><span class="price">€4,90</span></div>
+              <span class="tag">com leite</span>
+              <div class="item-head"><h3>Latte True Heart</h3><span class="price">€7,10</span></div>
               <p>Espresso com leite vaporizado, finalização cremosa e aroma de conforto.</p>
               <a class="btn btn-dark js-pedido" href="#">Pedir</a>
             </div>
           </article>
+          </div>
+        </div>
 
+        <div class="menu-category">
+          <div class="category-heading">
+            <h3>Gelados e especiais</h3>
+            <p>Bebidas frias, autorais e mais marcantes para dias longos, encontros e presentes.</p>
+          </div>
+
+          <div class="product-grid">
           <article class="card product-card">
-            <div class="product-image" style="background-image:url('https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?q=80&w=1200&auto=format&fit=crop')"></div>
+            <div class="product-image" style="background-image:url('https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=1200&auto=format&fit=crop')"></div>
             <div class="product-body">
-              <span class="tag">café</span>
-              <div class="item-head"><h3>Cappuccino</h3><span class="price">€4,50</span></div>
-              <p>Café, leite cremoso e um toque de cacau para acompanhar uma pausa boa.</p>
+              <span class="tag">gelado</span>
+              <div class="item-head"><h3>Iced Latte</h3><span class="price">€7,30</span></div>
+              <p>Espresso, leite gelado e textura leve para uma bebida fria sem exageros.</p>
               <a class="btn btn-dark js-pedido" href="#">Pedir</a>
             </div>
           </article>
 
           <article class="card product-card">
-            <div class="product-image" style="background-image:url('https://images.unsplash.com/photo-1499636136210-6f4ee915583e?q=80&w=1200&auto=format&fit=crop')"></div>
+            <div class="product-image" style="background-image:url('https://images.unsplash.com/photo-1560508180-03f285f67ded?q=80&w=1200&auto=format&fit=crop')"></div>
+            <div class="product-body">
+              <span class="tag">especial</span>
+              <div class="item-head"><h3>Lemon Berries</h3><span class="price">€9,30</span></div>
+              <p>Cordial de frutas vermelhas, limão, laranja e um toque de soda.</p>
+              <a class="btn btn-dark js-pedido" href="#">Pedir</a>
+            </div>
+          </article>
+
+          <article class="card product-card">
+            <div class="product-image" style="background-image:url('https://images.unsplash.com/photo-1621263764928-df1444c5e859?q=80&w=1200&auto=format&fit=crop')"></div>
+            <div class="product-body">
+              <span class="tag">especial</span>
+              <div class="item-head"><h3>Limonada True Heart</h3><span class="price">€9,30</span></div>
+              <p>Limão, grapefruit, xarope caseiro de gengibre e soda.</p>
+              <a class="btn btn-dark js-pedido" href="#">Pedir</a>
+            </div>
+          </article>
+
+          <article class="card product-card">
+            <div class="product-image" style="background-image:url('https://images.unsplash.com/photo-1563805042-7684c019e1cb?q=80&w=1200&auto=format&fit=crop')"></div>
+            <div class="product-body">
+              <span class="tag">oatly</span>
+              <div class="item-head"><h3>Caramel Oatly</h3><span class="price">€10,10</span></div>
+              <p>Bebida fria com espresso, caramelo e leite de aveia.</p>
+              <a class="btn btn-dark js-pedido" href="#">Pedir</a>
+            </div>
+          </article>
+          </div>
+        </div>
+
+        <div class="menu-category">
+          <div class="category-heading">
+            <h3>Doces</h3>
+            <p>Pastelaria e sobremesas para acompanhar café ou montar um pedido presenteável.</p>
+          </div>
+
+          <div class="product-grid">
+          <article class="card product-card">
+            <div class="product-image" style="background-image:url('https://images.unsplash.com/photo-1606313564200-e75d5e30476c?q=80&w=1200&auto=format&fit=crop')"></div>
             <div class="product-body">
               <span class="tag">doce</span>
-              <div class="item-head"><h3>Cookie artesanal</h3><span class="price">€3,80</span></div>
-              <p>Cookie macio por dentro, dourado por fora e feito para acompanhar café.</p>
+              <div class="item-head"><h3>Brownie Nutella</h3><span class="price">€10,90</span></div>
+              <p>Brownie úmido, intenso, com nibs de cacau e avelãs partidas.</p>
               <a class="btn btn-dark js-pedido" href="#">Pedir</a>
             </div>
           </article>
 
+          <article class="card product-card">
+            <div class="product-image" style="background-image:url('https://images.unsplash.com/photo-1550617931-e17a7b70dce2?q=80&w=1200&auto=format&fit=crop')"></div>
+            <div class="product-body">
+              <span class="tag">doce</span>
+              <div class="item-head"><h3>Carrot Cake</h3><span class="price">€7,70</span></div>
+              <p>Bolo de cenoura com nozes, cobertura cremosa e finalização da casa.</p>
+              <a class="btn btn-dark js-pedido" href="#">Pedir</a>
+            </div>
+          </article>
+
+          <article class="card product-card">
+            <div class="product-image" style="background-image:url('https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=1200&auto=format&fit=crop')"></div>
+            <div class="product-body">
+              <span class="tag">padaria</span>
+              <div class="item-head"><h3>Croissant</h3><span class="price">€6,40</span></div>
+              <p>Croissant com calda caseira, ideal para pedir aquecido.</p>
+              <a class="btn btn-dark js-pedido" href="#">Pedir</a>
+            </div>
+          </article>
+
+          <article class="card product-card">
+            <div class="product-image" style="background-image:url('https://images.unsplash.com/photo-1509365465985-25d11c17e812?q=80&w=1200&auto=format&fit=crop')"></div>
+            <div class="product-body">
+              <span class="tag">doce</span>
+              <div class="item-head"><h3>Rol de Canela</h3><span class="price">€9,10</span></div>
+              <p>Rol laminado com calda caseira de laranja e aroma quente de canela.</p>
+              <a class="btn btn-dark js-pedido" href="#">Pedir</a>
+            </div>
+          </article>
+          </div>
+        </div>
+
+        <div class="menu-category">
+          <div class="category-heading">
+            <h3>Salgados e brunch</h3>
+            <p>Opções mais completas para quem quer comer bem, sem transformar a cafeteria em restaurante pesado.</p>
+          </div>
+
+          <div class="product-grid">
+          <article class="card product-card">
+            <div class="product-image" style="background-image:url('https://images.unsplash.com/photo-1603046891744-1f76eb10aec1?q=80&w=1200&auto=format&fit=crop')"></div>
+            <div class="product-body">
+              <span class="tag">brunch</span>
+              <div class="item-head"><h3>Avocado Toast</h3><span class="price">€18,30</span></div>
+              <p>Massa madre ou brioche, abacate, sementes e tomates. Opções com ovo ou salmão.</p>
+              <a class="btn btn-dark js-pedido" href="#">Pedir</a>
+            </div>
+          </article>
+
+          <article class="card product-card">
+            <div class="product-image" style="background-image:url('https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=1200&auto=format&fit=crop')"></div>
+            <div class="product-body">
+              <span class="tag">almoço</span>
+              <div class="item-head"><h3>Bowl True Heart</h3><span class="price">desde €19,50</span></div>
+              <p>Quinoa, avocado, folhas, tomates, castanhas e sementes. Veggie, frango ou salmão.</p>
+              <a class="btn btn-dark js-pedido" href="#">Pedir</a>
+            </div>
+          </article>
+
+          <article class="card product-card">
+            <div class="product-image" style="background-image:url('https://images.unsplash.com/photo-1481070555726-e2fe8357725c?q=80&w=1200&auto=format&fit=crop')"></div>
+            <div class="product-body">
+              <span class="tag">sanduíche</span>
+              <div class="item-head"><h3>Toast da Casa</h3><span class="price">€15,30</span></div>
+              <p>Queijo, tomate, pesto de manjericão e pão à escolha. Simples, bom e confortável.</p>
+              <a class="btn btn-dark js-pedido" href="#">Pedir</a>
+            </div>
+          </article>
+
+          <article class="card product-card">
+            <div class="product-image" style="background-image:url('https://images.unsplash.com/photo-1547592166-23ac45744acd?q=80&w=1200&auto=format&fit=crop')"></div>
+            <div class="product-body">
+              <span class="tag">quente</span>
+              <div class="item-head"><h3>Sopa da Casa</h3><span class="price">€23,10</span></div>
+              <p>Sopa cremosa de abóbora e batata-doce com stracciatella, azeite e torradas.</p>
+              <a class="btn btn-dark js-pedido" href="#">Pedir</a>
+            </div>
+          </article>
+          </div>
+        </div>
+
+        <div class="menu-category">
+          <div class="category-heading">
+            <h3>Combos e presentes</h3>
+            <p>Pedidos pensados para café da manhã, lanche, brunch ou um presente simples com afeto.</p>
+          </div>
+
+          <div class="product-grid">
           <article class="card product-card">
             <div class="product-image" style="background-image:url('https://images.unsplash.com/photo-1551024709-8f23befc6f87?q=80&w=1200&auto=format&fit=crop')"></div>
             <div class="product-body">
+              <span class="tag">combo</span>
+              <div class="item-head"><h3>Combo Heart</h3><span class="price">€16,00</span></div>
+              <p>1 café, 1 bebida fria e 1 opção simples de doce ou salgado.</p>
+              <a class="btn btn-dark js-pedido" href="#">Pedir combo</a>
+            </div>
+          </article>
+
+          <article class="card product-card">
+            <div class="product-image" style="background-image:url('https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?q=80&w=1200&auto=format&fit=crop')"></div>
+            <div class="product-body">
+              <span class="tag">brunch</span>
+              <div class="item-head"><h3>Brunch para 1</h3><span class="price">€42,00</span></div>
+              <p>1 prato, 1 bebida fria, 1 café e 1 doce ou fatia de bolo.</p>
+              <a class="btn btn-dark js-pedido" href="#">Pedir brunch</a>
+            </div>
+          </article>
+
+          <article class="card product-card">
+            <div class="product-image" style="background-image:url('https://images.unsplash.com/photo-1511920170033-f8396924c348?q=80&w=1200&auto=format&fit=crop')"></div>
+            <div class="product-body">
+              <span class="tag">grãos</span>
+              <div class="item-head"><h3>Café para levar</h3><span class="price">desde €35,90</span></div>
+              <p>250g de grãos selecionados com notas sensoriais para espresso ou filtrado.</p>
+              <a class="btn btn-dark js-pedido" href="#">Pedir grãos</a>
+            </div>
+          </article>
+
+          <article class="card product-card">
+            <div class="product-image" style="background-image:url('https://images.unsplash.com/photo-1607083206869-4c7672e72a8a?q=80&w=1200&auto=format&fit=crop')"></div>
+            <div class="product-body">
               <span class="tag">presente</span>
-              <div class="item-head"><h3>Combo carinho</h3><span class="price">€18,00</span></div>
-              <p>Café, doce e uma mensagem especial. Uma opção simples para presentear.</p>
+              <div class="item-head"><h3>Gift Card</h3><span class="price">desde €10</span></div>
+              <p>Um presente para quem valoriza café, cuidado, estilo e propósito.</p>
               <a class="btn btn-dark js-pedido" href="#">Enviar como presente</a>
             </div>
           </article>
+          </div>
+        </div>
+
+        <div class="menu-note">
+          Valores em euro foram adaptados a partir da lógica do cardápio de referência: mantive a proporção visual dos preços, mas deixei a apresentação coerente com uma cafeteria premium em Berlim.
         </div>
       </div>
     </section>
