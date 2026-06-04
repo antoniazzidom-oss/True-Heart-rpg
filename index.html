@@ -3,427 +3,617 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ƭrue Ӈeartᵣₚ — vitrine</title>
+  <title>Ƭrue Ӈeartᵣₚ — Café, adoção e roupas premium</title>
   <meta name="description" content="Cafeteria acolhedora, adoção responsável e roupas premium com propósito." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
   <style>
     :root{
-      --bg:#f5f0e9;
-      --white:#fffdf9;
-      --ink:#241811;
-      --muted:#6d5c50;
-      --soft:#9a7f6a;
-      --line:#dfd2c4;
-      --brand:#a66a3d;
-      --brand-dark:#6f4529;
-      --dark:#120d0a;
-      --dark-2:#1b120d;
-      --dark-soft:#2a1b14;
-      --cream:#f2e7d8;
-      --radius:26px;
-      --shadow:0 20px 60px rgba(38,25,16,.10);
-      --max:1280px;
+      --bg:#f5efe7;
+      --paper:#fcf8f2;
+      --card:#fffdf9;
+      --ink:#261811;
+      --muted:#726052;
+      --line:#e2d5c5;
+      --brown:#4a2d1c;
+      --brown-2:#2a1a12;
+      --gold:#b67a49;
+      --gold-2:#9a6036;
+      --dark:#100b08;
+      --dark-2:#1c120d;
+      --shadow:0 22px 60px rgba(49,31,19,.12);
+      --radius:22px;
+      --max:1180px;
     }
+
     *{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth}
-    body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+    body{
+      font-family:'Inter',sans-serif;
+      background:var(--bg);
+      color:var(--ink);
+      line-height:1.5;
+      overflow-x:hidden;
+    }
     img{display:block;max-width:100%}
     a{text-decoration:none;color:inherit}
     .container{max-width:var(--max);margin:0 auto;padding:0 28px}
 
-    header.hero-shell{
-      background:
-        linear-gradient(90deg, rgba(11,8,6,.96) 0%, rgba(16,10,7,.94) 48%, rgba(22,14,10,.72) 67%, rgba(22,14,10,.28) 100%),
-        url('https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=1800&auto=format&fit=crop') center/cover;
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      min-height:48px;padding:12px 22px;border-radius:999px;border:1px solid transparent;
+      font-size:15px;font-weight:700;transition:.2s ease;cursor:pointer;white-space:nowrap
+    }
+    .btn-primary{
+      background:linear-gradient(180deg,#bd8250,#9b6035);
+      color:#fff;box-shadow:0 10px 24px rgba(154,96,53,.28)
+    }
+    .btn-primary:hover{transform:translateY(-2px);filter:brightness(1.04)}
+    .btn-outline{
+      background:rgba(255,255,255,.03);
+      border-color:rgba(255,255,255,.72);color:#fff
+    }
+    .btn-outline:hover{background:rgba(255,255,255,.09);transform:translateY(-2px)}
+    .btn-dark{
+      background:var(--brown);color:#fff
+    }
+    .btn-dark:hover{background:var(--gold-2);transform:translateY(-2px)}
+    .btn-ghost{
+      background:transparent;border:0;padding:0;min-height:auto;color:var(--gold-2);
+      font-size:15px;font-weight:600;justify-content:flex-start
+    }
+    .btn-ghost:hover{color:var(--brown);transform:translateX(3px)}
+
+    .hero{
       color:#fff;
       min-height:760px;
+      background:
+        linear-gradient(90deg, rgba(14,9,6,.98) 0%, rgba(17,11,7,.95) 43%, rgba(22,14,10,.55) 72%, rgba(22,14,10,.12) 100%),
+        url('https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=1800&auto=format&fit=crop') center/cover;
       position:relative;
-      overflow:hidden;
     }
-    .topbar{padding:26px 0}
-    .nav{display:flex;align-items:center;justify-content:space-between;gap:24px}
-    .brand{display:flex;align-items:center;gap:14px;min-width:max-content}
-    .brand img{width:52px;height:52px;object-fit:contain;border-radius:50%;background:#fff;padding:5px}
-    .brand span{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:700}
-    .nav-links{display:flex;align-items:center;gap:28px;flex-wrap:wrap}
-    .nav-links a{color:#f2e7d8;font-size:16px;opacity:.95}
-    .nav-links a:hover{opacity:1;color:#fff}
-    .hamburger{width:28px;display:grid;gap:5px}
-    .hamburger span{height:2px;background:#f2e7d8;border-radius:4px}
+    .navbar{
+      height:78px;display:flex;align-items:center;justify-content:space-between;gap:24px
+    }
+    .brand{display:flex;align-items:center;gap:12px;min-width:max-content}
+    .brand img{
+      width:48px;height:48px;object-fit:contain;border-radius:50%;
+      background:#fff;padding:5px
+    }
+    .brand span{
+      font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:700;letter-spacing:-.02em
+    }
+    .nav-links{display:flex;gap:34px;align-items:center;font-size:15px;color:rgba(255,255,255,.9)}
+    .nav-links a:hover{color:#fff}
+    .menu-icon{width:28px;display:grid;gap:6px}
+    .menu-icon span{height:2px;background:#fff;border-radius:5px}
 
-    .hero{padding:30px 0 80px}
-    .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:38px;align-items:end;min-height:570px}
-    .hero-copy{max-width:620px;padding-top:30px}
-    .hero-logo{width:190px;margin-bottom:26px;opacity:.98}
-    h1{font-family:'Cormorant Garamond',serif;font-size:clamp(66px,7.8vw,106px);line-height:.92;letter-spacing:-.045em;margin-bottom:20px}
-    .hero-copy p{font-size:20px;color:#f1e7dc;max-width:540px;margin-bottom:28px}
-    .btn-row{display:flex;gap:16px;flex-wrap:wrap}
-    .btn{display:inline-flex;align-items:center;justify-content:center;min-height:54px;padding:14px 24px;border-radius:999px;font-weight:700;font-size:17px;transition:.2s ease;border:1px solid transparent}
-    .btn.primary{background:linear-gradient(180deg,#b87a48,#9a6034);color:#fff;box-shadow:0 12px 24px rgba(166,106,61,.28)}
-    .btn.primary:hover{transform:translateY(-2px);filter:brightness(1.03)}
-    .btn.secondary{background:transparent;border-color:#c7b09b;color:#fff}
-    .btn.secondary:hover{background:#ffffff10;transform:translateY(-2px)}
-    .btn.light{background:#fff;color:var(--brand-dark)}
-    .btn.dark{background:#2d1d14;color:#fff}
-    .btn.card{padding:0;min-height:auto;font-size:15px;font-weight:600;color:var(--brand-dark);background:none;border:none;display:inline-flex;gap:10px;justify-content:flex-start}
+    .hero-content{
+      display:grid;grid-template-columns:1.05fr .95fr;gap:42px;align-items:center;
+      min-height:600px;padding:36px 0 78px
+    }
+    .hero-copy{max-width:620px}
+    .hero-logo{width:176px;margin-bottom:18px}
+    h1{
+      font-family:'Cormorant Garamond',serif;
+      font-size:clamp(58px,7.5vw,96px);
+      line-height:.93;letter-spacing:-.055em;margin-bottom:22px
+    }
+    .hero-copy p{
+      font-size:18px;color:#f1e7dc;max-width:510px;margin-bottom:32px
+    }
+    .hero-actions{display:flex;gap:14px;flex-wrap:wrap}
 
-    .hero-aside{display:flex;justify-content:flex-end}
-    .quote-card{background:rgba(17,11,8,.76);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.08);border-radius:22px;padding:38px 34px;max-width:280px;align-self:end;margin-bottom:36px}
-    .quote-card p{color:#b88c64;font-size:18px;line-height:1.65;text-transform:uppercase;letter-spacing:.02em;margin-bottom:48px}
-    .quote-card span{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#6e5646}
+    .hero-aside{
+      min-height:470px;display:flex;align-items:center;justify-content:flex-end
+    }
+    .hero-note{
+      width:min(300px,100%);
+      background:rgba(13,9,6,.84);
+      border:1px solid rgba(255,255,255,.07);
+      border-radius:18px;
+      padding:40px 34px;
+      box-shadow:0 24px 70px rgba(0,0,0,.34)
+    }
+    .hero-note p{
+      margin:0 0 56px;color:#b8875e;font-size:15px;font-weight:600;
+      line-height:1.85;text-transform:uppercase;letter-spacing:.06em
+    }
+    .hero-note span{
+      font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#785744
+    }
 
-    .section{padding:44px 0}
-    .cards-3{margin-top:-12px}
-    .cards-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
-    .info-card{background:var(--white);border:1px solid var(--line);border-radius:24px;padding:28px 28px 24px;box-shadow:var(--shadow)}
-    .info-head{display:flex;align-items:flex-start;gap:18px;margin-bottom:16px}
-    .icon-round{width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:#5a361f;color:#fff;font-size:26px;flex:0 0 auto}
-    .info-card h3{font-family:'Cormorant Garamond',serif;font-size:32px;line-height:1;margin-bottom:8px}
-    .info-card p{color:var(--muted);font-size:18px;margin-bottom:18px}
+    section{padding:44px 0}
 
-    .adopt-feature{background:linear-gradient(90deg,#1c120d 0%,#150e0a 100%);border-radius:24px;overflow:hidden;display:grid;grid-template-columns:1fr 1.15fr;box-shadow:var(--shadow)}
-    .adopt-img{min-height:420px;background:url('https://images.unsplash.com/photo-1511044568932-338cba0ad803?q=80&w=1600&auto=format&fit=crop') center/cover}
-    .adopt-copy{padding:44px;color:#fff}
-    .mini-label{display:flex;align-items:center;gap:10px;color:#e6c39d;margin-bottom:10px;font-size:18px}
-    .adopt-copy h2{font-family:'Cormorant Garamond',serif;font-size:58px;line-height:.95;margin-bottom:16px}
-    .adopt-copy > p{color:#efe5da;font-size:24px;line-height:1.4;max-width:650px;margin-bottom:26px}
-    .mini-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-bottom:24px}
-    .mini-grid .mini{display:flex;gap:12px;color:#dbcbbd;font-size:18px;line-height:1.35}
-    .mini-grid .mini strong{display:block;color:#fff;font-size:22px;font-family:'Cormorant Garamond',serif;margin-bottom:4px}
-    .mini .mini-icon{font-size:34px;color:#a97145;line-height:1}
+    .top-cards{
+      display:grid;grid-template-columns:repeat(3,1fr);gap:28px
+    }
+    .card{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow)
+    }
+    .mini-card{padding:30px}
+    .mini-row{display:flex;gap:18px;align-items:flex-start;margin-bottom:14px}
+    .circle{
+      width:64px;height:64px;border-radius:50%;background:var(--brown);
+      color:#fff;display:grid;place-items:center;font-size:26px;flex:0 0 auto
+    }
+    .mini-card h3{
+      font-family:'Cormorant Garamond',serif;font-size:34px;line-height:1;margin-bottom:8px
+    }
+    .mini-card p{font-size:16px;color:var(--muted);margin-bottom:14px}
 
-    .wear-grid{display:grid;grid-template-columns:.95fr 1fr 1fr 1fr 1fr;gap:18px;align-items:stretch}
-    .wear-text{padding:24px 16px 24px 18px;display:flex;flex-direction:column;justify-content:center}
-    .wear-text h2{font-family:'Cormorant Garamond',serif;font-size:54px;line-height:.95;margin-bottom:16px}
-    .wear-text p{font-size:22px;line-height:1.45;color:var(--muted);margin-bottom:22px;max-width:290px}
-    .wear-card{background:#e9e0d6;border-radius:14px;overflow:hidden;min-height:296px;box-shadow:var(--shadow)}
-    .wear-card img{width:100%;height:100%;object-fit:cover}
+    .adoption-feature{
+      display:grid;grid-template-columns:1fr 1.02fr;overflow:hidden;
+      background:linear-gradient(90deg,#1d120d,#120b08);color:#fff
+    }
+    .adopt-photo{
+      min-height:390px;
+      background:
+        linear-gradient(rgba(0,0,0,.08), rgba(0,0,0,.16)),
+        url('https://images.unsplash.com/photo-1511044568932-338cba0ad803?q=80&w=1600&auto=format&fit=crop') center/cover
+    }
+    .adopt-copy{padding:38px 42px;display:flex;flex-direction:column;justify-content:center}
+    .eyebrow{
+      color:#d4a274;font-size:14px;display:flex;gap:10px;align-items:center;margin-bottom:10px
+    }
+    .adopt-copy h2{
+      font-family:'Cormorant Garamond',serif;font-size:58px;line-height:.96;margin-bottom:14px
+    }
+    .adopt-copy > p{font-size:17px;color:#efe5da;margin-bottom:24px}
+    .adopt-species{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-bottom:24px}
+    .adopt-item{display:flex;gap:12px;color:#d8c9bb;font-size:14px}
+    .adopt-item .icon{font-size:34px;line-height:1;color:#b67a49}
+    .adopt-item strong{
+      display:block;font-family:'Cormorant Garamond',serif;font-size:24px;line-height:1;margin-bottom:6px;color:#fff
+    }
 
-    .steps-wrap{background:var(--white);border:1px solid var(--line);border-radius:24px;padding:18px 26px 22px;box-shadow:var(--shadow)}
-    .steps-title{font-family:'Cormorant Garamond',serif;font-size:46px;margin-bottom:12px}
-    .steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
-    .step{display:flex;align-items:flex-start;gap:14px;padding:14px 16px;border-right:1px solid var(--line)}
+    .wear-top{
+      display:grid;grid-template-columns:.95fr 1fr 1fr 1fr 1fr;gap:18px;align-items:stretch
+    }
+    .wear-text{padding:20px 10px 16px 12px;display:flex;flex-direction:column;justify-content:center}
+    .wear-text h2{
+      font-family:'Cormorant Garamond',serif;font-size:52px;line-height:.94;margin-bottom:14px
+    }
+    .wear-text p{font-size:18px;color:var(--muted);margin-bottom:18px;max-width:280px}
+    .wear-shot{
+      background:#e9e0d6;border-radius:14px;overflow:hidden;min-height:264px;box-shadow:var(--shadow)
+    }
+    .wear-shot img{width:100%;height:100%;object-fit:cover}
+
+    .section-head{max-width:760px;margin-bottom:24px}
+    .section-head .kicker{
+      color:var(--gold-2);font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px
+    }
+    .section-head h2{
+      font-family:'Cormorant Garamond',serif;font-size:56px;line-height:.96;margin-bottom:12px
+    }
+    .section-head p{font-size:18px;color:var(--muted)}
+
+    .product-grid{
+      display:grid;grid-template-columns:repeat(4,1fr);gap:18px
+    }
+    .product-card{overflow:hidden}
+    .product-image{
+      height:220px;background-size:cover;background-position:center;background-color:#e6d9c9
+    }
+    .product-body{padding:22px;display:flex;flex-direction:column;min-height:210px}
+    .tag{
+      width:fit-content;padding:6px 10px;border-radius:999px;background:rgba(182,122,73,.12);
+      color:var(--gold-2);font-size:12px;font-weight:700;margin-bottom:12px
+    }
+    .item-head{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;margin-bottom:8px}
+    .item-head h3{
+      font-family:'Cormorant Garamond',serif;font-size:30px;line-height:1
+    }
+    .price{white-space:nowrap;color:var(--brown);font-weight:800}
+    .product-body p{font-size:14px;color:var(--muted);margin-bottom:18px;flex:1}
+
+    .how-box{
+      padding:20px 24px 24px
+    }
+    .how-box h2{
+      font-family:'Cormorant Garamond',serif;font-size:44px;line-height:1;margin-bottom:16px
+    }
+    .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+    .step{
+      display:flex;gap:14px;padding:10px 14px;border-right:1px solid var(--line)
+    }
     .step:last-child{border-right:0}
-    .step .icon-round{width:52px;height:52px;font-size:23px}
-    .step strong{display:block;font-size:20px;color:var(--ink);margin-bottom:3px}
-    .step p{color:var(--muted-dark);font-size:16px;line-height:1.35}
+    .step .circle{width:52px;height:52px;font-size:22px;flex-basis:52px}
+    .step strong{display:block;font-size:14px;margin-bottom:4px}
+    .step p{font-size:13px;line-height:1.32;color:var(--muted)}
 
-    .visit-band{background:linear-gradient(90deg,#20140e 0%,#140d09 100%);border-radius:24px;overflow:hidden;color:#fff;display:grid;grid-template-columns:1.05fr .9fr .9fr;box-shadow:var(--shadow)}
-    .visit-photo{min-height:260px;background:url('https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=1600&auto=format&fit=crop') center/cover}
-    .visit-copy,.visit-side{padding:32px 34px}
-    .visit-copy .label,.visit-side .label{color:#d5af88;font-size:18px;margin-bottom:8px}
-    .visit-copy h2{font-family:'Cormorant Garamond',serif;font-size:62px;line-height:.95;margin-bottom:8px}
-    .visit-copy p,.visit-side p{font-size:21px;color:#f2e7dc}
-    .visit-side{display:flex;align-items:center;justify-content:center;text-align:center;background:rgba(255,255,255,.02)}
-    .visit-side .monument{font-size:70px;color:#a97145;margin-bottom:10px}
-
-    footer{background:#faf5ef;border-top:1px solid var(--line);margin-top:26px}
-    .footer-main{display:grid;grid-template-columns:1.15fr 1fr 1fr 1fr;gap:28px;padding:30px 0 26px;align-items:start}
-    .footer-brand img{width:230px;max-width:100%}
-    .footer-col p,.footer-col a{font-size:18px;color:var(--muted-dark);line-height:1.7}
-    .footer-col h4{font-size:18px;margin-bottom:6px;color:var(--ink)}
-    .social-row{display:flex;gap:14px;margin-top:14px}
-    .social{width:38px;height:38px;border-radius:50%;border:1px solid #c8b39f;display:grid;place-items:center;color:#805230;font-size:18px}
-    .footer-bottom{background:#2a1b14;color:#e8d8c5}
-    .footer-bottom .container{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:14px 28px;font-size:16px}
-
-    .label-section{font-size:0}
-
-    @media (max-width:1200px){
-      .hero-grid,.wear-grid,.visit-band,.adopt-feature,.footer-main{grid-template-columns:1fr}
-      .hero-aside{justify-content:flex-start}
-      .quote-card{max-width:360px;margin-bottom:0}
-      .adopt-img,.visit-photo{min-height:320px}
-      .wear-text p{max-width:none}
+    .visit-band{
+      display:grid;grid-template-columns:1.05fr .95fr .95fr;overflow:hidden;
+      background:linear-gradient(90deg,#1f140e,#120b08);color:#fff
     }
-    @media (max-width:980px){
-      .cards-grid,.steps-grid{grid-template-columns:1fr 1fr}
-      .step:nth-child(2){border-right:0}
-      .step:nth-child(1),.step:nth-child(2){border-bottom:1px solid var(--line)}
+    .visit-photo{
+      min-height:230px;
+      background:
+        linear-gradient(rgba(0,0,0,.08), rgba(0,0,0,.16)),
+        url('https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=1600&auto=format&fit=crop') center/cover
+    }
+    .visit-copy,.visit-side{padding:32px 34px;display:flex;flex-direction:column;justify-content:center}
+    .visit-copy .kicker{color:#d4a274;font-size:14px;margin-bottom:8px}
+    .visit-copy h2{
+      font-family:'Cormorant Garamond',serif;font-size:60px;line-height:.92;margin-bottom:8px
+    }
+    .visit-copy p,.visit-side p{font-size:18px;color:#f0e5da}
+    .visit-side{
+      border-left:1px solid rgba(255,255,255,.08);
+      align-items:center;text-align:center
+    }
+    .big-icon{font-size:68px;color:#b67a49;margin-bottom:12px}
+
+    footer{
+      background:var(--card);
+      border-top:1px solid var(--line);
+      margin-top:4px
+    }
+    .footer-main{
+      display:grid;grid-template-columns:1.15fr 1fr 1fr 1fr;gap:28px;padding:28px 0 24px;align-items:start
+    }
+    .footer-brand img{width:220px;max-width:100%}
+    .footer-col p,.footer-col a{font-size:15px;line-height:1.8;color:var(--muted)}
+    .footer-col h4{margin-bottom:10px}
+    .socials{display:flex;gap:12px}
+    .socials span{
+      width:36px;height:36px;border-radius:50%;border:1px solid var(--line);
+      display:grid;place-items:center;color:var(--gold-2)
+    }
+    .footer-bottom{
+      background:#2a1a12;color:#eadfce;font-size:14px
+    }
+    .footer-bottom .container{
+      display:flex;justify-content:space-between;gap:20px;padding:14px 28px
+    }
+
+    @media (max-width:1060px){
+      .hero-content,.adoption-feature,.wear-top,.visit-band,.footer-main{grid-template-columns:1fr}
+      .hero-aside{display:none}
+      .top-cards,.product-grid,.steps{grid-template-columns:repeat(2,1fr)}
+      .visit-side{border-left:0;border-top:1px solid rgba(255,255,255,.08)}
     }
     @media (max-width:760px){
       .container{padding:0 18px}
       .nav-links{display:none}
-      header.hero-shell{min-height:auto}
-      .hero-copy p,.adopt-copy > p,.wear-text p,.visit-copy p,.visit-side p{font-size:18px}
-      .cards-grid,.steps-grid,.mini-grid{grid-template-columns:1fr}
+      .top-cards,.product-grid,.adopt-species,.steps{grid-template-columns:1fr}
+      .wear-top{grid-template-columns:1fr 1fr}
       .step{border-right:0;border-bottom:1px solid var(--line)}
       .step:last-child{border-bottom:0}
-      .adopt-copy{padding:28px}
-      .hero-card,.info-card,.steps-wrap,.visit-band,.adopt-feature{border-radius:20px}
-      .quote-card{padding:26px}
+      .hero-actions,.btn{width:100%}
       .footer-bottom .container{flex-direction:column;text-align:center}
-      .btn{width:100%}
-      .btn-row{width:100%}
+      .adopt-copy{padding:28px}
     }
   </style>
 </head>
 <body>
-  <header class="hero-shell">
-    <div class="container topbar">
-      <div class="nav">
-        <a class="brand" href="#inicio">
-          <img src="images/logo.png" alt="Logo True Heart" />
-          <span>True Heart</span>
-        </a>
-        <nav class="nav-links" aria-label="Menu">
-          <a href="#cafeteria">Cafeteria</a>
-          <a href="#adocao">Adoção</a>
-          <a href="#roupas">Roupas</a>
-          <a href="#funciona">Como funciona</a>
-          <a href="#visita">Visita</a>
-        </nav>
-        <div class="hamburger" aria-hidden="true"><span></span><span></span><span></span></div>
-      </div>
+  <header class="hero">
+    <div class="container navbar">
+      <a class="brand" href="#inicio">
+        <img src="images/logo.png" alt="Logo True Heart">
+        <span>True Heart</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Menu principal">
+        <a href="#cardapio">Cafeteria</a>
+        <a href="#adocao">Adoção</a>
+        <a href="#colecao">Roupas</a>
+        <a href="#funciona">Como funciona</a>
+        <a href="#visita">Visita</a>
+      </nav>
+
+      <div class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></div>
     </div>
 
-    <div class="container hero" id="inicio">
-      <div class="hero-grid">
-        <div class="hero-copy">
-          <img class="hero-logo" src="images/logo.png" alt="Logo True Heart" />
-          <h1>Um lugar para<br>estar, cuidar e<br>fazer parte.</h1>
-          <p>Cafeteria acolhedora, adoção responsável e roupas que fazem a diferença. Tudo o que fazemos, transforma vidas.</p>
-          <div class="btn-row">
-            <a class="btn primary" href="#adocao">Conhecer a adoção →</a>
-            <a class="btn secondary" href="#cafeteria">Ver a cafeteria →</a>
-          </div>
+    <div class="container hero-content" id="inicio">
+      <div class="hero-copy">
+        <img class="hero-logo" src="images/logo.png" alt="Logo True Heart">
+        <h1>Um lugar para estar, cuidar e fazer parte.</h1>
+        <p>Cafeteria acolhedora, adoção responsável e roupas que fazem a diferença. Tudo o que fazemos, transforma vidas.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#adocao">Conhecer a adoção →</a>
+          <a class="btn btn-outline" href="#cardapio">Ver a cafeteria →</a>
         </div>
+      </div>
 
-        <div class="hero-aside">
-          <div class="quote-card">
-            <p>BOM CAFÉ.<br>BONS ENCONTROS.<br>GRANDES CAUSAS.</p>
-            <span>TRUE HEART</span>
-          </div>
+      <div class="hero-aside">
+        <div class="hero-note">
+          <p>BOM CAFÉ.<br>BONS ENCONTROS.<br>GRANDES CAUSAS.</p>
+          <span>TRUE HEART</span>
         </div>
       </div>
     </div>
   </header>
 
   <main>
-    <section class="section cards-3">
-      <div class="container">
-        <div class="cards-grid">
-          <article class="info-card" id="cafeteria">
-            <div class="info-head">
-              <div class="icon-round">☕</div>
-              <div>
-                <h3>Cafeteria</h3>
-                <p>Cafés especiais, comidas saborosas e um ambiente acolhedor para todos.</p>
-              </div>
+    <section>
+      <div class="container top-cards">
+        <article class="card mini-card">
+          <div class="mini-row">
+            <div class="circle">☕</div>
+            <div>
+              <h3>Cafeteria</h3>
+              <p>Cafés especiais, comidas saborosas e um ambiente acolhedor para todos.</p>
             </div>
-            <a class="btn card" href="#cardapio">Ver cardápio <span>→</span></a>
-          </article>
+          </div>
+          <a class="btn btn-ghost" href="#cardapio">Ver cardápio →</a>
+        </article>
 
-          <article class="info-card">
-            <div class="info-head">
-              <div class="icon-round">🐾</div>
-              <div>
-                <h3>Adoção</h3>
-                <p>Espaço separado e tranquilo para conhecer animais de ONGs parceiras.</p>
-              </div>
+        <article class="card mini-card">
+          <div class="mini-row">
+            <div class="circle">🐾</div>
+            <div>
+              <h3>Adoção</h3>
+              <p>Espaço separado e tranquilo para conhecer animais de ONGs parceiras.</p>
             </div>
-            <a class="btn card" href="#adocao">Conhecer os animais <span>→</span></a>
-          </article>
+          </div>
+          <a class="btn btn-ghost" href="#adocao">Conhecer os animais →</a>
+        </article>
 
-          <article class="info-card" id="roupas">
-            <div class="info-head">
-              <div class="icon-round">👕</div>
-              <div>
-                <h3>Roupas</h3>
-                <p>Peças premium e atemporais que apoiam nossa missão e geram impacto real.</p>
-              </div>
+        <article class="card mini-card">
+          <div class="mini-row">
+            <div class="circle">👕</div>
+            <div>
+              <h3>Roupas</h3>
+              <p>Peças premium e atemporais que apoiam nossa missão e geram impacto real.</p>
             </div>
-            <a class="btn card" href="#colecao">Ver coleção <span>→</span></a>
-          </article>
-        </div>
+          </div>
+          <a class="btn btn-ghost" href="#colecao">Ver coleção →</a>
+        </article>
       </div>
     </section>
 
-    <section class="section" id="adocao">
+    <section id="adocao">
       <div class="container">
-        <div class="adopt-feature">
-          <div class="adopt-img"></div>
+        <div class="card adoption-feature">
+          <div class="adopt-photo"></div>
           <div class="adopt-copy">
-            <div class="mini-label">♡ <span>Nosso espaço de adoção</span></div>
-            <h2>Respeito, cuidado<br>e novos começos.</h2>
+            <div class="eyebrow">♡ <span>Nosso espaço de adoção</span></div>
+            <h2>Respeito, cuidado e novos começos.</h2>
             <p>Nosso espaço de adoção é separado da cafeteria para garantir tranquilidade e bem-estar aos animais.</p>
-            <div class="mini-grid">
-              <div class="mini">
-                <div class="mini-icon">🐈</div>
+
+            <div class="adopt-species">
+              <div class="adopt-item">
+                <div class="icon">🐈</div>
                 <div><strong>Ciclos de gatos</strong>Adoção responsável com acompanhamento e suporte.</div>
               </div>
-              <div class="mini">
-                <div class="mini-icon">🐕</div>
+
+              <div class="adopt-item">
+                <div class="icon">🐕</div>
                 <div><strong>Ciclos de cachorros</strong>Socialização, cuidado e famílias preparadas para acolher.</div>
               </div>
             </div>
-            <a class="btn primary js-adocao" href="#">Saiba mais sobre a adoção →</a>
+
+            <a class="btn btn-primary js-adocao" href="#">Saiba mais sobre a adoção →</a>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="colecao">
+    <section id="colecao">
       <div class="container">
-        <div class="wear-grid">
+        <div class="wear-top">
           <div class="wear-text">
             <h2>True Heart Wear ♥</h2>
             <p>Minimalista. Premium. Atemporal. Cada peça carrega propósito e apoia nossa causa.</p>
-            <a class="btn card js-pedido" href="#">Ver coleção completa <span>→</span></a>
+            <a class="btn btn-ghost js-pedido" href="#">Ver coleção completa →</a>
           </div>
 
-          <div class="wear-card"><img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=900&auto=format&fit=crop" alt="Moletom premium" /></div>
-          <div class="wear-card"><img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?q=80&w=900&auto=format&fit=crop" alt="Camiseta premium" /></div>
-          <div class="wear-card"><img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=900&auto=format&fit=crop" alt="Look preto" /></div>
-          <div class="wear-card"><img src="https://images.unsplash.com/photo-1506629905607-d9a3174c6b6b?q=80&w=900&auto=format&fit=crop" alt="Jogger premium" /></div>
+          <div class="wear-shot"><img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=900&auto=format&fit=crop" alt="Look 1"></div>
+          <div class="wear-shot"><img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?q=80&w=900&auto=format&fit=crop" alt="Look 2"></div>
+          <div class="wear-shot"><img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=900&auto=format&fit=crop" alt="Look 3"></div>
+          <div class="wear-shot"><img src="https://images.unsplash.com/photo-1542272604-787c3835535d?q=80&w=900&auto=format&fit=crop" alt="Look 4"></div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="funciona">
+    <section id="cardapio">
       <div class="container">
-        <div class="steps-wrap">
-          <div class="steps-title">Como funciona</div>
-          <div class="steps-grid">
+        <div class="section-head">
+          <div class="kicker">Cardápio</div>
+          <h2>Sabores para ficar mais um pouco.</h2>
+          <p>Vitrine inicial do cardápio. Todos os botões abaixo levam para o formulário de pedido geral.</p>
+        </div>
+
+        <div class="product-grid">
+          <article class="card product-card">
+            <div class="product-image" style="background-image:url('https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=1200&auto=format&fit=crop')"></div>
+            <div class="product-body">
+              <span class="tag">café</span>
+              <div class="item-head"><h3>Latte True Heart</h3><span class="price">€4,90</span></div>
+              <p>Espresso com leite vaporizado, finalização cremosa e aroma de conforto.</p>
+              <a class="btn btn-dark js-pedido" href="#">Pedir</a>
+            </div>
+          </article>
+
+          <article class="card product-card">
+            <div class="product-image" style="background-image:url('https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?q=80&w=1200&auto=format&fit=crop')"></div>
+            <div class="product-body">
+              <span class="tag">café</span>
+              <div class="item-head"><h3>Cappuccino</h3><span class="price">€4,50</span></div>
+              <p>Café, leite cremoso e um toque de cacau para acompanhar uma pausa boa.</p>
+              <a class="btn btn-dark js-pedido" href="#">Pedir</a>
+            </div>
+          </article>
+
+          <article class="card product-card">
+            <div class="product-image" style="background-image:url('https://images.unsplash.com/photo-1499636136210-6f4ee915583e?q=80&w=1200&auto=format&fit=crop')"></div>
+            <div class="product-body">
+              <span class="tag">doce</span>
+              <div class="item-head"><h3>Cookie artesanal</h3><span class="price">€3,80</span></div>
+              <p>Cookie macio por dentro, dourado por fora e feito para acompanhar café.</p>
+              <a class="btn btn-dark js-pedido" href="#">Pedir</a>
+            </div>
+          </article>
+
+          <article class="card product-card">
+            <div class="product-image" style="background-image:url('https://images.unsplash.com/photo-1551024709-8f23befc6f87?q=80&w=1200&auto=format&fit=crop')"></div>
+            <div class="product-body">
+              <span class="tag">presente</span>
+              <div class="item-head"><h3>Combo carinho</h3><span class="price">€18,00</span></div>
+              <p>Café, doce e uma mensagem especial. Uma opção simples para presentear.</p>
+              <a class="btn btn-dark js-pedido" href="#">Enviar como presente</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="card how-box" id="funciona">
+          <h2>Como funciona</h2>
+          <div class="steps">
             <article class="step">
-              <div class="icon-round">🗓</div>
-              <div>
-                <strong>1. Visite-nos</strong>
-                <p>Venha para a cafeteria e aproveite o ambiente.</p>
-              </div>
+              <div class="circle">🗓</div>
+              <div><strong>1. Visite-nos</strong><p>Venha para a cafeteria e aproveite o ambiente.</p></div>
             </article>
+
             <article class="step">
-              <div class="icon-round">🐾</div>
-              <div>
-                <strong>2. Conheça os animais</strong>
-                <p>Agende um horário e conheça seu novo amigo.</p>
-              </div>
+              <div class="circle">🐾</div>
+              <div><strong>2. Conheça os animais</strong><p>Agende um horário e conheça seu novo amigo.</p></div>
             </article>
+
             <article class="step">
-              <div class="icon-round">♡</div>
-              <div>
-                <strong>3. Adoção responsável</strong>
-                <p>Avaliamos juntos o melhor caminho para todos.</p>
-              </div>
+              <div class="circle">♡</div>
+              <div><strong>3. Adoção responsável</strong><p>Avaliamos juntos o melhor caminho para todos.</p></div>
             </article>
+
             <article class="step">
-              <div class="icon-round">🏠</div>
-              <div>
-                <strong>4. Um novo lar</strong>
-                <p>Acompanhamento e apoio para uma adaptação feliz.</p>
-              </div>
+              <div class="circle">🏠</div>
+              <div><strong>4. Um novo lar</strong><p>Acompanhamento e apoio para uma adaptação feliz.</p></div>
             </article>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="visita">
+    <section id="visita">
       <div class="container">
-        <div class="visit-band">
+        <div class="card visit-band">
           <div class="visit-photo"></div>
           <div class="visit-copy">
-            <div class="label">Visita</div>
-            <h2>Berlin</h2>
+            <div class="kicker">Visita</div>
+            <h2>Berlim</h2>
             <p>Desde 2025</p>
             <p>Marcação: @trueheartrp</p>
           </div>
           <div class="visit-side">
             <div>
-              <div class="monument">🏛</div>
-              <p>Uma comunidade que<br>acolhe, conecta e<br>transforma.</p>
+              <div class="big-icon">🏛</div>
+              <p>Uma comunidade que acolhe, conecta e transforma.</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="cardapio">
+    <section>
       <div class="container">
-        <div class="cards-grid">
-          <article class="info-card">
-            <div class="info-head">
-              <div class="icon-round">☕</div>
-              <div>
-                <h3>Latte True Heart</h3>
-                <p>Espresso com leite vaporizado e finalização cremosa.</p>
-              </div>
+        <div class="section-head">
+          <div class="kicker">Vitrine completa</div>
+          <h2>Mais peças da coleção.</h2>
+          <p>Esses itens mantêm a estrutura de vitrine: mostram o produto, o preço e levam ao mesmo formulário de pedido.</p>
+        </div>
+
+        <div class="product-grid">
+          <article class="card product-card">
+            <div class="product-image" style="background-image:url('https://images.unsplash.com/photo-1556821840-3a63f95609a7?q=80&w=900&auto=format&fit=crop')"></div>
+            <div class="product-body">
+              <span class="tag">moletom</span>
+              <div class="item-head"><h3>Hoodie Black</h3><span class="price">€119</span></div>
+              <p>Moletom premium preto, confortável, minimalista e com identidade True Heart.</p>
+              <a class="btn btn-dark js-pedido" href="#">Tenho interesse</a>
             </div>
-            <a class="btn card js-pedido" href="#">€4,90 • Pedir <span>→</span></a>
           </article>
-          <article class="info-card">
-            <div class="info-head">
-              <div class="icon-round">🥐</div>
-              <div>
-                <h3>Croissant</h3>
-                <p>Massa leve, amanteigada e perfeita para o café da manhã.</p>
-              </div>
+
+          <article class="card product-card">
+            <div class="product-image" style="background-image:url('https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=900&auto=format&fit=crop')"></div>
+            <div class="product-body">
+              <span class="tag">camiseta</span>
+              <div class="item-head"><h3>T-Shirt Black</h3><span class="price">€79</span></div>
+              <p>Camiseta premium preta, versátil e pensada para uso cotidiano com presença.</p>
+              <a class="btn btn-dark js-pedido" href="#">Tenho interesse</a>
             </div>
-            <a class="btn card js-pedido" href="#">€3,90 • Pedir <span>→</span></a>
           </article>
-          <article class="info-card">
-            <div class="info-head">
-              <div class="icon-round">🎁</div>
-              <div>
-                <h3>Combo Presente</h3>
-                <p>Café, doce e mensagem especial para presentear alguém.</p>
-              </div>
+
+          <article class="card product-card">
+            <div class="product-image" style="background-image:url('https://images.unsplash.com/photo-1542272604-787c3835535d?q=80&w=900&auto=format&fit=crop')"></div>
+            <div class="product-body">
+              <span class="tag">calça</span>
+              <div class="item-head"><h3>Jogger Black</h3><span class="price">€109</span></div>
+              <p>Jogger premium para conforto, movimento e uma estética limpa.</p>
+              <a class="btn btn-dark js-pedido" href="#">Tenho interesse</a>
             </div>
-            <a class="btn card js-pedido" href="#">€18,00 • Pedir <span>→</span></a>
+          </article>
+
+          <article class="card product-card">
+            <div class="product-image" style="background-image:url('https://images.unsplash.com/photo-1607083206869-4c7672e72a8a?q=80&w=900&auto=format&fit=crop')"></div>
+            <div class="product-body">
+              <span class="tag">presente</span>
+              <div class="item-head"><h3>Gift Card</h3><span class="price">desde €10</span></div>
+              <p>Um presente para quem valoriza estilo, qualidade e propósito.</p>
+              <a class="btn btn-dark js-pedido" href="#">Enviar como presente</a>
+            </div>
           </article>
         </div>
       </div>
     </section>
-  </main>
 
-  <footer>
-    <div class="container footer-main">
-      <div class="footer-brand">
-        <img src="images/logo.png" alt="Logo True Heart" />
-      </div>
-      <div class="footer-col">
-        <p>Café com propósito.</p>
-        <p>Moda com impacto.</p>
-        <p>Adoção com amor.</p>
-      </div>
-      <div class="footer-col">
-        <p><a href="#inicio">Sobre nós</a></p>
-        <p><a class="js-adocao" href="#">Adoção</a></p>
-        <p><a href="#funciona">Perguntas frequentes</a></p>
-        <p><a class="js-pedido" href="#">Contato</a></p>
-      </div>
-      <div class="footer-col">
-        <h4>Siga-nos</h4>
-        <div class="social-row">
-          <div class="social">◎</div>
-          <div class="social">◉</div>
+    <footer>
+      <div class="container footer-main">
+        <div class="footer-brand">
+          <img src="images/logo.png" alt="Logo True Heart">
+        </div>
+
+        <div class="footer-col">
+          <p>Café com propósito.</p>
+          <p>Moda com impacto.</p>
+          <p>Adoção com amor.</p>
+        </div>
+
+        <div class="footer-col">
+          <p><a href="#inicio">Sobre nós</a></p>
+          <p><a class="js-adocao" href="#">Parceiros</a></p>
+          <p><a href="#funciona">Perguntas frequentes</a></p>
+          <p><a class="js-pedido" href="#">Contato</a></p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Siga-nos</h4>
+          <div class="socials"><span>◎</span><span>◉</span></div>
         </div>
       </div>
-    </div>
-    <div class="footer-bottom">
-      <div class="container">
-        <div>♡ Feito com coração em Berlin.</div>
-        <div>© True Heart 2025</div>
+
+      <div class="footer-bottom">
+        <div class="container">
+          <div>♡ Feito com coração em Berlim.</div>
+          <div>© True Heart 2025</div>
+        </div>
       </div>
-    </div>
-  </footer>
+    </footer>
+  </main>
 
   <script>
     const LINK_PEDIDO = "https://forms.gle/SEU-LINK-DE-PEDIDO";
     const LINK_ADOCAO = "https://forms.gle/SEU-LINK-DE-ADOCAO";
 
-    document.querySelectorAll('.js-pedido').forEach((el)=>{
-      el.href = LINK_PEDIDO;
-      el.target = '_blank';
-      el.rel = 'noopener';
+    document.querySelectorAll(".js-pedido").forEach((item) => {
+      item.href = LINK_PEDIDO;
+      item.target = "_blank";
+      item.rel = "noopener";
     });
 
-    document.querySelectorAll('.js-adocao').forEach((el)=>{
-      el.href = LINK_ADOCAO;
-      el.target = '_blank';
-      el.rel = 'noopener';
+    document.querySelectorAll(".js-adocao").forEach((item) => {
+      item.href = LINK_ADOCAO;
+      item.target = "_blank";
+      item.rel = "noopener";
     });
   </script>
 </body>
