@@ -94,8 +94,9 @@
       display:grid;grid-template-columns:1.05fr .95fr;gap:42px;align-items:center;
       min-height:600px;padding:36px 0 78px
     }
-    .hero-copy{max-width:620px}
-    .hero-logo{width:176px;margin-bottom:18px}
+    .hero-copy{max-width:660px}
+    .hero-lockup{margin-bottom:22px}
+    .hero-lockup img{width:min(100%,520px);height:auto;display:block;filter:drop-shadow(0 12px 22px rgba(0,0,0,.24))}
     h1{
       font-family:'Cormorant Garamond',serif;
       font-size:clamp(58px,7.5vw,96px);
@@ -330,7 +331,7 @@
   <header class="hero">
     <div class="container navbar">
       <a class="brand" href="#inicio">
-        <img src="images/logo.png" alt="Logo True Heart">
+        <img src="images/logo-topo-3d.png" alt="Logo True Heart">
         <span>True Heart</span>
       </a>
 
@@ -347,7 +348,9 @@
 
     <div class="container hero-content" id="inicio">
       <div class="hero-copy">
-        <img class="hero-logo" src="images/logo.png" alt="Logo True Heart">
+        <div class="hero-lockup">
+          <img src="images/logo-hero.png" alt="Logotipo True Heart">
+        </div>
         <h1>Um lugar para estar, cuidar e fazer parte.</h1>
         <p>Cafeteria acolhedora, adoção responsável e roupas que fazem a diferença. Tudo o que fazemos, transforma vidas.</p>
         <div class="hero-actions">
@@ -439,10 +442,10 @@
             <a class="btn btn-ghost js-pedido" href="#">Ver coleção completa →</a>
           </div>
 
-          <div class="wear-shot"><img src="images/true-autumn-look.png" alt="Look 1"></div>
-          <div class="wear-shot"><img src="images/true-winter-look.png" alt="Look 2"></div>
-          <div class="wear-shot"><img src="images/true-autumnguys-look.png" alt="Look 3"></div>
-          <div class="wear-shot"><img src="images/true-winterguys-look.png" alt="Look 4"></div>
+          <div class="wear-shot"><img src="images/true-autumn-look.jpg" alt="Look 1"></div>
+          <div class="wear-shot"><img src="images/true-winter-look.jpg" alt="Look 2"></div>
+          <div class="wear-shot"><img src="images/true-autumnguys-look.jpg" alt="Look 3"></div>
+          <div class="wear-shot"><img src="images/true-winterguys-look.jpg" alt="Look 4"></div>
         </div>
       </div>
     </section>
