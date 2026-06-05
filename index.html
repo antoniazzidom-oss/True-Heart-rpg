@@ -85,6 +85,12 @@
     .brand span{
       font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:700;letter-spacing:-.02em
     }
+    .brand-empty{
+      width:28px;
+      height:28px;
+      min-width:28px;
+      display:block
+    }
     .nav-links{display:flex;gap:34px;align-items:center;font-size:15px;color:rgba(255,255,255,.9)}
     .nav-links a:hover{color:#fff}
     .menu-icon{width:28px;display:grid;gap:6px}
@@ -373,7 +379,7 @@
 <body>
   <header class="hero">
     <div class="container navbar">
-      <a <a class="brand brand-empty" href="#inicio" aria-label="Início"></a>
+      <div class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></div>
 
       <nav class="nav-links" aria-label="Menu principal">
         <a href="#cardapio">Cafeteria</a>
@@ -383,7 +389,7 @@
         <a href="#visita">Visita</a>
       </nav>
 
-      <div class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></div>
+      <a class="brand brand-empty" href="#inicio" aria-label="Início"></a>
     </div>
 
     <div class="container hero-content" id="inicio">
