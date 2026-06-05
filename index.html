@@ -91,27 +91,37 @@
     .menu-icon span{height:2px;background:#fff;border-radius:5px}
 
     .hero-content{
-      display:grid;grid-template-columns:minmax(0, 1fr) 340px;gap:56px;align-items:center;
-      min-height:600px;padding:36px 0 78px
+      position:relative;
+      min-height:600px;
+      padding:36px 0 78px;
+      display:block
     }
-    .hero-copy{max-width:920px}
+    .hero-copy{max-width:980px;position:relative;z-index:2}
     .hero-lockup{margin-bottom:22px}
     .hero-lockup img{width:min(100%,430px);height:auto;display:block;filter:drop-shadow(0 12px 22px rgba(0,0,0,.24))}
     h1{
       font-family:'Cormorant Garamond',serif;
-      font-size:clamp(34px,4.2vw,54px);
-      line-height:1.04;
-      letter-spacing:-.032em;
+      font-size:clamp(36px,4.4vw,56px);
+      line-height:1.02;
+      letter-spacing:-.035em;
       margin-bottom:22px;
-      max-width:920px
+      max-width:980px
     }
     .hero-copy p{
-      font-size:18px;color:#f1e7dc;max-width:510px;margin-bottom:32px
+      font-size:18px;color:#f1e7dc;max-width:690px;margin-bottom:32px
     }
     .hero-actions{display:flex;gap:14px;flex-wrap:wrap}
 
     .hero-aside{
-      min-height:470px;display:flex;align-items:center;justify-content:flex-end
+      position:absolute;
+      right:0;
+      top:50%;
+      transform:translateY(-34%);
+      width:320px;
+      display:flex;
+      align-items:center;
+      justify-content:flex-end;
+      z-index:1
     }
     .hero-note{
       width:min(300px,100%);
@@ -311,7 +321,7 @@
     }
 
     @media (max-width:1060px){
-      .hero-content,.adoption-feature,.wear-top,.visit-band,.footer-main{grid-template-columns:1fr}
+      .adoption-feature,.wear-top,.visit-band,.footer-main{grid-template-columns:1fr}
       .hero-aside{display:none}
       .top-cards,.product-grid,.steps{grid-template-columns:repeat(2,1fr)}
       .visit-side{border-left:0;border-top:1px solid rgba(255,255,255,.08)}
@@ -354,7 +364,7 @@
         <div class="hero-lockup">
           <img src="images/logo-hero.png" alt="Logotipo True Heart">
         </div>
-        <h1>Um lugar para estar, cuidar e fazer parte.</h1>
+        <h1>Um lugar para estar, cuidar e<br>fazer parte.</h1>
         <p>Cafeteria acolhedora, adoção responsável e roupas que fazem a diferença. Tudo o que fazemos, transforma vidas.</p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="#adocao">Conhecer a adoção →</a>
