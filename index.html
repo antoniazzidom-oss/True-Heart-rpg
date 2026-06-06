@@ -213,6 +213,32 @@
       font-family:'Cormorant Garamond',serif;font-size:56px;line-height:.96;margin-bottom:12px
     }
     .section-head p{font-size:18px;color:var(--muted)}
+    .menu-pdf-link{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  margin-top:8px;
+  color:var(--ink);
+  font-size:16px;
+  font-weight:700;
+  border-bottom:1px solid var(--ink);
+  padding-bottom:3px;
+  width:fit-content;
+  transition:.2s ease;
+}
+
+.menu-pdf-link span{
+  transition:.2s ease;
+}
+
+.menu-pdf-link:hover{
+  color:var(--gold-2);
+  border-bottom-color:var(--gold-2);
+}
+
+.menu-pdf-link:hover span{
+  transform:translateX(4px);
+}
 
     .product-grid{
       display:grid;grid-template-columns:repeat(4,1fr);gap:18px
