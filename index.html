@@ -260,13 +260,12 @@
       display:grid;
       grid-template-columns:repeat(4,1fr);
       gap:18px;
-      align-items:stretch;
+      align-items:start;
     }
     .product-card{
       overflow:hidden;
-      height:100%;
-      display:flex;
-      flex-direction:column;
+      height:auto;
+      align-self:start;
     }
     .product-image{
       height:220px;background-size:cover;background-position:center;background-color:#e6d9c9
@@ -275,8 +274,7 @@
       padding:22px;
       display:flex;
       flex-direction:column;
-      flex:1;
-      min-height:230px;
+      min-height:210px;
     }
     .tag{
       width:fit-content;padding:6px 10px;border-radius:999px;background:rgba(182,122,73,.12);
@@ -288,10 +286,6 @@
     }
     .price{white-space:normal;color:var(--brown);font-weight:800;font-size:18px}
     .product-body p{font-size:14px;color:var(--muted);margin-bottom:18px;flex:1}
-    .product-body .btn{
-      margin-top:auto;
-      align-self:stretch;
-    }
 
 
     .menu-category{
@@ -419,7 +413,13 @@
     }
 
     @media (max-width:1060px){
-      .adoption-feature,.wear-top,.visit-band,.footer-main{grid-template-columns:1fr}
+      .adoption-feature,.wear-top,.visit-band,.footer-main{
+      display:grid;
+      grid-template-columns:auto 1fr 1fr 1fr;
+      gap:34px;
+      padding:18px 0;
+      align-items:center;
+    }
       .hero-aside{display:none}
       .top-cards,.product-grid,.steps{grid-template-columns:repeat(2,1fr)}
       .visit-side{border-left:0;border-top:1px solid rgba(255,255,255,.08)}
@@ -434,9 +434,12 @@
       .hero-actions,.btn{width:100%}
       .category-heading{align-items:flex-start;flex-direction:column}
       .footer-bottom-inner{
-        flex-direction:column;
-        text-align:center;
-      }
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:20px;
+      padding:14px 28px;
+    }
       .adopt-copy{padding:28px}
     }
   </style>
@@ -821,22 +824,22 @@
           <div class="steps">
             <article class="step">
               <div class="circle">🗓</div>
-              <div><strong>1. Visite-nos</strong><p>Venha para a cafeteria e aproveite o ambiente.</p></div>
+              <div><strong>1. Visite-nos</strong><p>Venha para a cafeteria, aproveite o ambiente e conheça nosso espaço de adoção.</p></div>
             </article>
 
             <article class="step">
               <div class="circle">🐾</div>
-              <div><strong>2. Conheça os animais</strong><p>Agende um horário e conheça seu novo amigo.</p></div>
+              <div><strong>2. Conheça os animais</strong><p>Clientes podem visitar o espaço durante a experiência. Quem vier apenas pelos animais contribui com uma taxa solidária.</p></div>
             </article>
 
             <article class="step">
               <div class="circle">♡</div>
-              <div><strong>3. Adoção responsável</strong><p>Avaliamos juntos o melhor caminho para todos.</p></div>
+              <div><strong>3. Interesse em adotar</strong><p>Se houver conexão, iniciamos o cadastro, a conversa e a orientação com a ONG parceira.</p></div>
             </article>
 
             <article class="step">
               <div class="circle">🏠</div>
-              <div><strong>4. Um novo lar</strong><p>Acompanhamento e apoio para uma adaptação feliz.</p></div>
+              <div><strong>4. Novo lar responsável</strong><p>A adoção segue com cuidado, avaliação e acompanhamento para uma adaptação segura.</p></div>
             </article>
           </div>
         </div>
