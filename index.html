@@ -31,13 +31,14 @@
     *{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth}
     body{
-  font-family:'Inter',sans-serif;
-  background:var(--bg);
-  color:var(--ink);
-  line-height:1.5;
-  overflow-x:hidden;
-  margin:0;
-}
+      font-family:'Inter',sans-serif;
+      background:#2a1a12;
+      color:var(--ink);
+      line-height:1.5;
+      overflow-x:hidden;
+      margin:0;
+      min-height:100vh;
+    }
     img{display:block;max-width:100%}
     a{text-decoration:none;color:inherit}
     .container{max-width:var(--max);margin:0 auto;padding:0 28px}
@@ -333,18 +334,17 @@
     .big-icon{font-size:68px;color:#b67a49;margin-bottom:12px}
 
     footer{
-  background:var(--card);
-  border-top:1px solid var(--line);
-  margin-top:4px;
-  width:100vw;
-  margin-left:calc(50% - 50vw);
-}
+      background:var(--card);
+      border-top:1px solid var(--line);
+      margin-top:0;
+      width:100%;
+    }
     .footer-main{
       display:grid;
       grid-template-columns:auto 1fr 1fr 1fr;
       gap:34px;
       padding:18px 0;
-      align-items:center
+      align-items:center;
     }
     .footer-brand img{
       width:150px;
@@ -374,22 +374,28 @@
       border-color:var(--brown)
     }
     .footer-bottom{
-  background:#2a1a12;
-  color:#eadfce;
-  font-size:14px;
-  width:100vw;
-  margin-left:calc(50% - 50vw);
-}
+      background:#2a1a12;
+      color:#eadfce;
+      font-size:14px;
+      width:100%;
+      margin:0;
+    }
     .footer-bottom-inner{
       display:flex;
       justify-content:space-between;
       align-items:center;
       gap:20px;
-      padding:12px 28px
+      padding:16px 28px 26px;
     }
 
     @media (max-width:1060px){
-      .adoption-feature,.wear-top,.visit-band,.footer-main{grid-template-columns:1fr}
+      .adoption-feature,.wear-top,.visit-band,.footer-main{
+      display:grid;
+      grid-template-columns:auto 1fr 1fr 1fr;
+      gap:34px;
+      padding:18px 0;
+      align-items:center;
+    }
       .hero-aside{display:none}
       .top-cards,.product-grid,.steps{grid-template-columns:repeat(2,1fr)}
       .visit-side{border-left:0;border-top:1px solid rgba(255,255,255,.08)}
@@ -403,7 +409,13 @@
       .step:last-child{border-bottom:0}
       .hero-actions,.btn{width:100%}
       .category-heading{align-items:flex-start;flex-direction:column}
-      .footer-bottom-inner{flex-direction:column;text-align:center}
+      .footer-bottom-inner{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:20px;
+      padding:16px 28px 26px;
+    }
       .adopt-copy{padding:28px}
     }
   </style>
@@ -778,6 +790,8 @@
           </article>
           </div>
         </div>
+      </div>
+    </section>
 
     <section>
       <div class="container">
@@ -880,6 +894,8 @@
       </div>
     </section>
 
+  </main>
+
     <footer>
       <div class="container footer-main">
         <div class="footer-brand">
@@ -914,7 +930,6 @@
         </div>
       </div>
     </footer>
-  </main>
 
   <script>
     const LINK_PEDIDO = "https://forms.gle/SEU-LINK-DE-PEDIDO";
