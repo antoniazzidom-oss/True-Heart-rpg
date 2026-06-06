@@ -32,7 +32,7 @@
     html{scroll-behavior:smooth;background:#2a1a12}
     body{
       font-family:'Inter',sans-serif;
-      background:var(--bg);
+      background:transparent;
       color:var(--ink);
       line-height:1.5;
       overflow-x:hidden;
@@ -147,7 +147,11 @@
       font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#785744
     }
 
-    section{padding:44px 0}
+    main{
+      background:var(--bg);
+    }
+
+    section{padding:44px 0;background:var(--bg)}
 
     .top-cards{
       display:grid;grid-template-columns:repeat(3,1fr);gap:28px
@@ -245,20 +249,24 @@
 }
 
     .product-grid{
-      display:grid;grid-template-columns:repeat(4,1fr);gap:18px
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:18px;
+      align-items:start;
     }
-    .product-card{overflow:hidden}
+    .product-card{
+      overflow:hidden;
+      height:auto;
+      align-self:start;
+    }
     .product-image{
       height:220px;background-size:cover;background-position:center;background-color:#e6d9c9
     }
     .product-body{
-      font-family:'Inter',sans-serif;
-      background:var(--bg);
-      color:var(--ink);
-      line-height:1.5;
-      overflow-x:hidden;
-      margin:0;
-      min-height:100vh;
+      padding:22px;
+      display:flex;
+      flex-direction:column;
+      min-height:210px;
     }
     .tag{
       width:fit-content;padding:6px 10px;border-radius:999px;background:rgba(182,122,73,.12);
@@ -348,7 +356,11 @@
       width:100%;
     }
     .footer-main{
-      background:var(--bg);
+      display:grid;
+      grid-template-columns:auto 1fr 1fr 1fr;
+      gap:34px;
+      padding:18px 0;
+      align-items:center;
     }
     .footer-brand img{
       width:150px;
@@ -389,12 +401,16 @@
       justify-content:space-between;
       align-items:center;
       gap:20px;
-      padding:16px 28px 26px;
+      padding:14px 28px;
     }
 
     @media (max-width:1060px){
       .adoption-feature,.wear-top,.visit-band,.footer-main{
-      background:var(--bg);
+      display:grid;
+      grid-template-columns:auto 1fr 1fr 1fr;
+      gap:34px;
+      padding:18px 0;
+      align-items:center;
     }
       .hero-aside{display:none}
       .top-cards,.product-grid,.steps{grid-template-columns:repeat(2,1fr)}
@@ -414,7 +430,7 @@
       justify-content:space-between;
       align-items:center;
       gap:20px;
-      padding:16px 28px 26px;
+      padding:14px 28px;
     }
       .adopt-copy{padding:28px}
     }
