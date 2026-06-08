@@ -170,8 +170,23 @@
       border-radius:var(--radius);
       box-shadow:var(--shadow)
     }
-    .mini-card{padding:30px}
-    .mini-row{display:flex;gap:18px;align-items:flex-start;margin-bottom:14px}
+    .mini-card{
+  padding:30px;
+  display:flex;
+  flex-direction:column;
+  height:100%;
+}
+    .mini-row{
+  display:flex;
+  gap:18px;
+  align-items:flex-start;
+  margin-bottom:14px;
+  flex:1;
+}
+    .mini-card .btn-ghost{
+  margin-top:auto;
+  align-self:flex-start;
+}
     .circle{
       width:64px;height:64px;border-radius:50%;background:var(--brown);
       color:#fff;display:grid;place-items:center;font-size:26px;flex:0 0 auto
